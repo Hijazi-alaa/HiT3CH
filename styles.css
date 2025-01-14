@@ -77,7 +77,7 @@ nav ul li a:hover {
 }
 
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/rss/images/Hero-image.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('rss/images/Hero-image.jpg') no-repeat center center/cover;
     color: #fff;
     padding: 100px 20px;
     text-align: center;
