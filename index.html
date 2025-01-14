@@ -13,11 +13,16 @@
                 <h1><a href="#">HiT3CH</a></h1>
             </div>
             <nav>
-                <ul>
+                <ul class="nav-links">
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
         </div>
     </header>
@@ -120,7 +125,14 @@
         </div>
     </footer>
 </body>
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-active');
+    });
+</script>
 <script src="https://kit.fontawesome.com/a7cfe14bd2.js" crossorigin="anonymous"></script>
 
 </html>
