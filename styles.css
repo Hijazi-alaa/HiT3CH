@@ -2,7 +2,7 @@
 
 html {
     scroll-behavior: smooth;
-  }
+}
   
 body {
     margin: 0;
@@ -14,7 +14,6 @@ body {
     line-height: 1.6;
 }
 
-/* Hide the nav links by default on mobile */
 .nav-links {
     display: flex;
     list-style: none;
@@ -42,7 +41,6 @@ body {
     transition: 0.4s;
 }
 
-/* Media query for mobile devices */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -69,28 +67,11 @@ body {
     }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "Roboto Condensed", serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-}
-
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     color: #fff;
-}
-
-#services,
-#contact {
-    margin: 48px 0 48px 0;
 }
 
 header {
@@ -125,10 +106,22 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    position: relative;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: #1a9541;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 .hero {
@@ -157,18 +150,54 @@ nav ul li a:hover {
     font-weight: 500;
 }
 
-.hero .btn {
+/* Animated Get Started Button */
+.btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 15px 40px;
     background: #222;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero .btn:hover {
-    background: #222;
-    scale: 1.1;
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,
+        transparent,
+        rgba(255,255,255,0.1),
+        transparent);
+    transition: 0.4s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn i {
+    transition: transform 0.3s ease;
+}
+
+.btn:hover i {
+    transform: translateX(3px);
+}
+
+/* Pulse animation for CTA */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(26, 149, 65, 0.4); }
+    70% { box-shadow: 0 0 0 12px rgba(26, 149, 65, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(26, 149, 65, 0); }
+}
+
+.btn, .contact-btn {
+    animation: pulse 2s infinite;
 }
 
 .section-title {
@@ -189,29 +218,91 @@ nav ul li a:hover {
     gap: 20px;
 }
 
+/* Enhanced Service Boxes */
 .service {
     flex: 1;
     min-width: 280px;
-    padding: 20px;
+    padding: 30px;
     color: #fff;
     background: #242323;
     border: 1px solid #5a5656;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
 }
 
 .service:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.service::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        transparent 20%, 
+        rgba(26, 149, 65, 0.1) 45%, 
+        transparent 80%);
+    transform: rotate(45deg);
+    transition: 0.6s;
+    opacity: 0;
+}
+
+.service:hover::after {
+    bottom: -30%;
+    left: -30%;
+    opacity: 1;
+}
+
+.service h3 {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.service:hover h3 {
+    transform: translateX(10px);
+}
+
+.service p {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease 0.1s;
+}
+
+.service:hover p {
+    transform: translateX(5px);
 }
 
 .icon {
     margin: 8px 0 8px 8px;
     font-size: large;
     scale: 1.5;
+    animation: float 3s ease-in-out infinite;
 }
 
-/*about us */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Icon hover effect */
+.service:hover .icon {
+    animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
 #about {
     margin: 48px 0 0 0;
     padding: 20px;
@@ -229,11 +320,16 @@ nav ul li a:hover {
     flex: 1;
     margin-right: 20px;
 }
+
 .about-image {
     flex: 1;
+    transition: transform 0.3s ease;
 }
 
-/* Media query for screen widths 720px and below */
+.about-image:hover img {
+    transform: scale(1.03);
+}
+
 @media (max-width: 720px) {
     .about-content {
         flex-direction: column;
@@ -255,7 +351,6 @@ nav ul li a:hover {
     }
 }
 
-
 .about-text p {
     font-size: 1.1em;
     line-height: 1.6;
@@ -269,36 +364,55 @@ nav ul li a:hover {
     color: orange;
 }
 
-.about-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .about-image img {
     max-width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
+/* Contact Button Matching Get Started */
 .contact-btn {
-    display: inline-block;
-    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 40px;
     background: #222;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
     font-weight: 700;
     letter-spacing: 1px;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.contact-btn:hover {
-    background: #444;
-    scale: 1.05;
+.contact-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,
+        transparent,
+        rgba(255,255,255,0.1),
+        transparent);
+    transition: 0.4s;
 }
 
+.contact-btn:hover::before {
+    left: 100%;
+}
+
+.contact-btn i {
+    transition: transform 0.3s ease;
+}
+
+.contact-btn:hover i {
+    transform: translateX(3px);
+}
 
 .contact-div {
     display: flex;
@@ -315,82 +429,10 @@ em {
     font-style: normal;
 }
 
-/* Contact us*/
-/* form {
-    max-width: 600px;
-    margin: 50px auto;
-}
-
-.contact-input {
-    font-weight: 500;
-    font-size: 18px;
-    border-radius: 5px;
-    line-height: 22px;
-    background-color: transparent;
-    border: 2px solid #272525;
-    transition: all 0.3s;
-    padding: 13px;
-    margin-bottom: 15px;
-    width: 100%;
-    box-sizing: border-box;
-    outline: 0;
-    color: #FFF;
-}
-
-.contact-input:focus {
-    border: 2px solid #fff;
-}
-
-textarea {
-    height: 150px;
-    line-height: 150%;
-    resize: vertical;
-}
-
-.submit-btn {
-    text-align: center;
-    margin-top: 12px;
-}
-
-[type="submit"] {
-    width: 60%;
-    background: #222;
-    border-radius: 5px;
-    border: 0;
-    cursor: pointer;
-    color: #fff;
-    font-size: 20px;
-    letter-spacing: 2px;
-    padding: 10px 20px;
-    transition: all 0.3s;
-    margin-top: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-[type="submit"]:hover {
-    scale: 1.1;
-}
-
-.contact-heading {
-    color: #fff;
-    text-align: center;
-    margin: 40px 0;
-    font-size: 2.5em;
-    font-family: "Oswald", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-}
-*/ 
-
-/* Footer */
-
 footer {
     background: #000;
     color: #fff;
     padding: 32px 16px 16px 32px;
-
 }
 
 footer .container {
@@ -409,4 +451,12 @@ footer .container {
 footer p {
     margin: 0;
     color: #5a5656;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
