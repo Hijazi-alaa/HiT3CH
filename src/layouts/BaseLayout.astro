@@ -18,7 +18,7 @@ const ogImageURL = ogImage || `${SITE_CONFIG.SITE_URL}/images/og-default.jpg`;
 ---
 
 <!DOCTYPE html>
-<html lang={lang} class="scroll-smooth">
+<html lang={lang} class="scroll-smooth font-sans">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,7 +63,7 @@ const ogImageURL = ogImage || `${SITE_CONFIG.SITE_URL}/images/og-default.jpg`;
   })} />
 </head>
 
-<body class="min-h-screen bg-white text-secondary-900 antialiased">
+<body class="min-h-screen bg-white text-secondary-900 antialiased flex flex-col">
   <Header lang={lang} />
   
   <main class="flex-1">
@@ -106,22 +106,12 @@ const ogImageURL = ogImage || `${SITE_CONFIG.SITE_URL}/images/og-default.jpg`;
   </script>
   
   <style>
-    /* Base styles */
-    html {
-      font-family: 'Inter', system-ui, sans-serif;
-    }
-    
-    body {
-      display: flex;
-      flex-direction: column;
-    }
-    
     /* Focus styles for accessibility */
     :focus-visible {
       outline: 2px solid theme('colors.primary.500');
       outline-offset: 2px;
     }
-    
+
     /* Smooth scroll behavior */
     @media (prefers-reduced-motion: no-preference) {
       html {
