@@ -1,0 +1,41 @@
+---
+import type { Language } from '../utils/constants';
+
+export interface Props {
+  lang: Language;
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+
+// Generate URLs for both languages
+const enUrl = `/en${currentPath}`;
+const svUrl = `/sv${currentPath}`;
+---
+
+<div class="flex items-center space-x-1 bg-secondary-100 rounded-lg p-1">
+  <a 
+    href={enUrl}
+    class={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
+      lang === 'en' 
+        ? 'bg-white text-primary-600 shadow-sm' 
+        : 'text-secondary-600 hover:text-secondary-900'
+    }`}
+    hreflang="en"
+    aria-label="Switch to English"
+  >
+    EN
+  </a>
+  <a 
+    href={svUrl}
+    class={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
+      lang === 'sv' 
+        ? 'bg-white text-primary-600 shadow-sm' 
+        : 'text-secondary-600 hover:text-secondary-900'
+    }`}
+    hreflang="sv"
+    aria-label="Byt till svenska"
+  >
+    SV
+  </a>
+</div>

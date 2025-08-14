@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow search results and utility pages
+Disallow: /pagefind/
+Disallow: /*.json$
+
+# Sitemap location
+Sitemap: https://hitech.example.com/sitemap-index.xml

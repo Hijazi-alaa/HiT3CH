@@ -1,0 +1,133 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ConsentManager from '../components/ConsentManager.astro';
+import { SITE_CONFIG } from '../utils/constants';
+
+export interface Props {
+  title: string;
+  description: string;
+  lang: 'en' | 'sv';
+  canonical?: string;
+  ogImage?: string;
+}
+
+const { title, description, lang, canonical, ogImage } = Astro.props;
+const canonicalURL = canonical || Astro.url.href;
+const ogImageURL = ogImage || `${SITE_CONFIG.SITE_URL}/images/og-default.jpg`;
+---
+
+<!DOCTYPE html>
+<html lang={lang} class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonicalURL}>
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonicalURL}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={ogImageURL}>
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content={canonicalURL}>
+  <meta property="twitter:title" content={title}>
+  <meta property="twitter:description" content={description}>
+  <meta property="twitter:image" content={ogImageURL}>
+  
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  
+  <!-- JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": SITE_CONFIG.SITE_NAME,
+    "url": SITE_CONFIG.SITE_URL,
+    "logo": `${SITE_CONFIG.SITE_URL}/images/logo.png`,
+    "description": description,
+    "sameAs": [
+      "https://www.linkedin.com/company/hitech-ai",
+      "https://www.facebook.com/hitech.ai"
+    ]
+  })} />
+</head>
+
+<body class="min-h-screen bg-white text-secondary-900 antialiased">
+  <Header lang={lang} />
+  
+  <main class="flex-1">
+    <slot />
+  </main>
+  
+  <Footer lang={lang} />
+  <ConsentManager />
+  
+  <!-- Back to top button -->
+  <button 
+    id="back-to-top" 
+    class="fixed bottom-6 right-6 bg-primary-600 text-white p-3 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+    aria-label="Back to top"
+  >
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </button>
+
+  <script>
+    // Back to top functionality
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    function toggleBackToTop() {
+      if (window.scrollY > 300) {
+        backToTopButton?.classList.remove('opacity-0', 'pointer-events-none');
+        backToTopButton?.classList.add('opacity-100');
+      } else {
+        backToTopButton?.classList.add('opacity-0', 'pointer-events-none');
+        backToTopButton?.classList.remove('opacity-100');
+      }
+    }
+    
+    window.addEventListener('scroll', toggleBackToTop);
+    
+    backToTopButton?.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+  
+  <style>
+    /* Base styles */
+    html {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Focus styles for accessibility */
+    :focus-visible {
+      outline: 2px solid theme('colors.primary.500');
+      outline-offset: 2px;
+    }
+    
+    /* Smooth scroll behavior */
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+    }
+  </style>
+</body>
+</html>

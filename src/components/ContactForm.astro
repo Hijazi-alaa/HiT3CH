@@ -1,0 +1,291 @@
+---
+import { SITE_CONFIG } from '../utils/constants';
+import type { Language } from '../utils/constants';
+
+export interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+
+const labels = {
+  en: {
+    name: 'Full Name',
+    email: 'Email Address',
+    company: 'Company Name',
+    track: 'Interest',
+    trackOptions: {
+      track1: 'AI Receptionist (SEK 20,000+)',
+      track2: 'Custom AI Enterprise (SEK 80,000+)',
+      consultation: 'General Consultation'
+    },
+    message: 'Message',
+    submit: 'Send Message',
+    success: 'Thank you! Your message has been sent successfully.',
+    error: 'Sorry, there was an error sending your message. Please try again.',
+    required: 'This field is required'
+  },
+  sv: {
+    name: 'Fullständigt Namn',
+    email: 'E-postadress',
+    company: 'Företagsnamn',
+    track: 'Intresse',
+    trackOptions: {
+      track1: 'AI-receptionist (20 000 SEK+)',
+      track2: 'Anpassad AI Företag (80 000 SEK+)',
+      consultation: 'Allmän Konsultation'
+    },
+    message: 'Meddelande',
+    submit: 'Skicka Meddelande',
+    success: 'Tack! Ditt meddelande har skickats framgångsrikt.',
+    error: 'Tyvärr uppstod ett fel när ditt meddelande skulle skickas. Försök igen.',
+    required: 'Detta fält är obligatoriskt'
+  }
+};
+
+const t = labels[lang];
+---
+
+<div class="bg-white rounded-lg shadow-lg p-8">
+  <form id="contact-form" class="space-y-6">
+    <!-- Name Field -->
+    <div>
+      <label for="name" class="block text-sm font-medium text-secondary-700 mb-2">
+        {t.name} <span class="text-red-500">*</span>
+      </label>
+      <input 
+        type="text" 
+        id="name" 
+        name="name" 
+        required
+        class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+        placeholder={t.name}
+      >
+      <div class="error-message hidden text-red-600 text-sm mt-1"></div>
+    </div>
+
+    <!-- Email Field -->
+    <div>
+      <label for="email" class="block text-sm font-medium text-secondary-700 mb-2">
+        {t.email} <span class="text-red-500">*</span>
+      </label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        required
+        class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+        placeholder={t.email}
+      >
+      <div class="error-message hidden text-red-600 text-sm mt-1"></div>
+    </div>
+
+    <!-- Company Field -->
+    <div>
+      <label for="company" class="block text-sm font-medium text-secondary-700 mb-2">
+        {t.company}
+      </label>
+      <input 
+        type="text" 
+        id="company" 
+        name="company"
+        class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+        placeholder={t.company}
+      >
+    </div>
+
+    <!-- Track Interest Field -->
+    <div>
+      <label for="track" class="block text-sm font-medium text-secondary-700 mb-2">
+        {t.track} <span class="text-red-500">*</span>
+      </label>
+      <select 
+        id="track" 
+        name="track" 
+        required
+        class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+      >
+        <option value="">Select an option...</option>
+        <option value="track1">{t.trackOptions.track1}</option>
+        <option value="track2">{t.trackOptions.track2}</option>
+        <option value="consultation">{t.trackOptions.consultation}</option>
+      </select>
+      <div class="error-message hidden text-red-600 text-sm mt-1"></div>
+    </div>
+
+    <!-- Message Field -->
+    <div>
+      <label for="message" class="block text-sm font-medium text-secondary-700 mb-2">
+        {t.message} <span class="text-red-500">*</span>
+      </label>
+      <textarea 
+        id="message" 
+        name="message" 
+        rows="4" 
+        required
+        class="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+        placeholder={t.message}
+      ></textarea>
+      <div class="error-message hidden text-red-600 text-sm mt-1"></div>
+    </div>
+
+    <!-- Submit Button -->
+    <div>
+      <button 
+        type="submit" 
+        class="w-full bg-primary-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        <span class="submit-text">{t.submit}</span>
+        <span class="loading-text hidden">Sending...</span>
+      </button>
+    </div>
+  </form>
+
+  <!-- Success/Error Messages -->
+  <div id="form-success" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mt-4">
+    {t.success}
+  </div>
+  
+  <div id="form-error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mt-4">
+    {t.error}
+  </div>
+</div>
+
+<script define:vars={{ FORM_ENDPOINT: SITE_CONFIG.FORM_ENDPOINT, labels: t }}>
+  class ContactFormHandler {
+    constructor() {
+      this.form = document.getElementById('contact-form');
+      this.submitButton = this.form?.querySelector('button[type="submit"]');
+      this.submitText = this.form?.querySelector('.submit-text');
+      this.loadingText = this.form?.querySelector('.loading-text');
+      this.successMessage = document.getElementById('form-success');
+      this.errorMessage = document.getElementById('form-error');
+      
+      this.init();
+    }
+
+    init() {
+      if (this.form) {
+        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+      }
+    }
+
+    async handleSubmit(event) {
+      event.preventDefault();
+      
+      // Clear previous messages
+      this.hideMessages();
+      this.clearErrors();
+      
+      // Validate form
+      if (!this.validateForm()) {
+        return;
+      }
+
+      // Show loading state
+      this.setLoadingState(true);
+
+      try {
+        const formData = new FormData(this.form);
+        
+        const response = await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          this.showSuccess();
+          this.form.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+        this.showError();
+      } finally {
+        this.setLoadingState(false);
+      }
+    }
+
+    validateForm() {
+      let isValid = true;
+      const requiredFields = ['name', 'email', 'track', 'message'];
+      
+      requiredFields.forEach(fieldName => {
+        const field = this.form?.querySelector(`[name="${fieldName}"]`);
+        const errorContainer = field?.parentElement.querySelector('.error-message');
+        
+        if (field && !field.value.trim()) {
+          this.showFieldError(errorContainer, labels.required);
+          isValid = false;
+        }
+      });
+
+      // Email validation
+      const emailField = this.form?.querySelector('[name="email"]');
+      const emailError = emailField?.parentElement.querySelector('.error-message');
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      
+      if (emailField && emailField.value && !emailRegex.test(emailField.value)) {
+        this.showFieldError(emailError, 'Please enter a valid email address');
+        isValid = false;
+      }
+
+      return isValid;
+    }
+
+    showFieldError(errorContainer, message) {
+      if (errorContainer) {
+        errorContainer.textContent = message;
+        errorContainer.classList.remove('hidden');
+      }
+    }
+
+    clearErrors() {
+      const errorMessages = this.form?.querySelectorAll('.error-message');
+      errorMessages?.forEach(error => {
+        error.classList.add('hidden');
+        error.textContent = '';
+      });
+    }
+
+    setLoadingState(loading) {
+      if (this.submitButton) {
+        this.submitButton.disabled = loading;
+      }
+      
+      if (loading) {
+        this.submitText?.classList.add('hidden');
+        this.loadingText?.classList.remove('hidden');
+      } else {
+        this.submitText?.classList.remove('hidden');
+        this.loadingText?.classList.add('hidden');
+      }
+    }
+
+    showSuccess() {
+      this.successMessage?.classList.remove('hidden');
+      this.successMessage?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    showError() {
+      this.errorMessage?.classList.remove('hidden');
+      this.errorMessage?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    hideMessages() {
+      this.successMessage?.classList.add('hidden');
+      this.errorMessage?.classList.add('hidden');
+    }
+  }
+
+  // Initialize form handler when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => new ContactFormHandler());
+  } else {
+    new ContactFormHandler();
+  }
+</script>
