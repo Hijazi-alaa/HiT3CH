@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-secondary-700 hover:text-primary-600 transition-colors font-medium;
+  }
+  .nav-link[data-current="true"] {
+    @apply text-primary-600;
+  }
+  .mobile-nav-link {
+    @apply block px-3 py-2 text-secondary-700 hover:text-primary-600 hover:bg-secondary-50 transition-colors font-medium rounded-md;
+  }
+  .mobile-nav-link[data-current="true"] {
+    @apply text-primary-600 bg-primary-50;
+  }
+  .icon {
+    @apply w-5 h-5;
+  }
+  .icon-md {
+    @apply w-6 h-6;
+  }
+  .icon-lg {
+    @apply w-8 h-8;
+  }
+  .icon-xl {
+    @apply w-16 h-16;
+  }
+  .icon-2xl {
+    @apply w-12 h-12;
+  }
+}
