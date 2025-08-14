@@ -1,0 +1,270 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getTranslation } from '../../utils/translations';
+
+const t = getTranslation('sv');
+---
+
+<BaseLayout
+  title="Användningsfall & Demo - HiT3CH AI-lösningar"
+  description="Se hur svenska företag använder våra AI-agenter för att automatisera kundservice och förbättra effektiviteten."
+  lang="sv"
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-primary-50 to-secondary-50 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
+          Användningsfall & Demo
+        </h1>
+        <p class="text-xl text-secondary-600 mb-8 max-w-3xl mx-auto">
+          Upptäck hur svenska företag förvandlar sin kundservice med våra AI-drivna röst- och chattagenter.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases Grid -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
+          Verkliga Exempel från Svenska Företag
+        </h2>
+        <p class="text-lg text-secondary-600">
+          Se hur våra AI-lösningar fungerar i praktiken och levererar mätbara resultat.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Healthcare Use Case -->
+        <div class="bg-white rounded-xl border border-secondary-200 hover:shadow-lg transition-shadow">
+          <div class="p-6">
+            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-secondary-900 mb-3">Sjukvårdsklinik</h3>
+            <p class="text-secondary-600 mb-4">
+              En privat sjukvårdsklinik i Stockholm använder vår AI-receptionist för att hantera schemaläggning och vanliga frågor.
+            </p>
+            <div class="space-y-2 text-sm text-secondary-500">
+              <p><strong>Resultat:</strong> 70% minskning av väntetider</p>
+              <p><strong>Besparingar:</strong> 45 timmar/månad för personal</p>
+              <p><strong>Kundnöjdhet:</strong> 94%</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Retail Use Case -->
+        <div class="bg-white rounded-xl border border-secondary-200 hover:shadow-lg transition-shadow">
+          <div class="p-6">
+            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-secondary-900 mb-3">E-handelsföretag</h3>
+            <p class="text-secondary-600 mb-4">
+              Ett svenskt e-handelsföretag använder AI-chatten för att hantera kundfrågor och beställningar 24/7.
+            </p>
+            <div class="space-y-2 text-sm text-secondary-500">
+              <p><strong>Resultat:</strong> 85% av frågor besvaras automatiskt</p>
+              <p><strong>Besparingar:</strong> 60 timmar/månad för support</p>
+              <p><strong>Försäljning:</strong> 23% ökning i konvertering</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Energy Company Use Case -->
+        <div class="bg-white rounded-xl border border-secondary-200 hover:shadow-lg transition-shadow">
+          <div class="p-6">
+            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-secondary-900 mb-3">Energiföretag</h3>
+            <p class="text-secondary-600 mb-4">
+              Ett energiföretag använder AI för att hantera kundärenden och tekniska frågor på svenska och engelska.
+            </p>
+            <div class="space-y-2 text-sm text-secondary-500">
+              <p><strong>Resultat:</strong> 90% av ärenden hanteras automatiskt</p>
+              <p><strong>Besparingar:</strong> 80 timmar/månad för tekniker</p>
+              <p><strong>Upptid:</strong> 99.9% systemtillgänglighet</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Public Services Use Case -->
+        <div class="bg-white rounded-xl border border-secondary-200 hover:shadow-lg transition-shadow">
+          <div class="p-6">
+            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-secondary-900 mb-3">Kommun</h3>
+            <p class="text-secondary-600 mb-4">
+              En svensk kommun använder AI för att hantera medborgarfrågor och schemaläggning av tjänster.
+            </p>
+            <div class="space-y-2 text-sm text-secondary-500">
+              <p><strong>Resultat:</strong> 75% snabbare hantering av ärenden</p>
+              <p><strong>Besparingar:</strong> 120 timmar/månad för kommunal personal</p>
+              <p><strong>Medborgarnöjdhet:</strong> 89%</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- E-commerce Use Case -->
+        <div class="bg-white rounded-xl border border-secondary-200 hover:shadow-lg transition-shadow">
+          <div class="p-6">
+            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-secondary-900 mb-3">Onlinebutik</h3>
+            <p class="text-secondary-600 mb-4">
+              En onlinebutik använder AI för att hantera kundfrågor, returer och produktrekommendationer.
+            </p>
+            <div class="space-y-2 text-sm text-secondary-500">
+              <p><strong>Resultat:</strong> 80% av frågor besvaras automatiskt</p>
+              <p><strong>Besparingar:</strong> 50 timmar/månad för kundservice</p>
+              <p><strong>Försäljning:</strong> 18% ökning i genomsnittsorder</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Manufacturing Use Case -->
+        <div class="bg-white rounded-xl border border-secondary-200 hover:shadow-lg transition-shadow">
+          <div class="p-6">
+            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-secondary-900 mb-3">Tillverkningsföretag</h3>
+            <p class="text-secondary-600 mb-4">
+              Ett tillverkningsföretag använder AI för att hantera leverantörsfrågor och beställningar.
+            </p>
+            <div class="space-y-2 text-sm text-secondary-500">
+              <p><strong>Resultat:</strong> 95% av beställningar hanteras automatiskt</p>
+              <p><strong>Besparingar:</strong> 100 timmar/månad för inköpsavdelning</p>
+              <p><strong>Effektivitet:</strong> 40% snabbare leverantörsprocesser</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Section -->
+  <section class="py-20 bg-secondary-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-secondary-900 mb-8">
+          Prova Våra AI-lösningar
+        </h2>
+        <p class="text-lg text-secondary-600 mb-12 max-w-2xl mx-auto">
+          Boka en gratis demo och se hur våra AI-agenter kan förvandla din kundservice. Vi visar verkliga exempel och anpassar lösningen efter dina specifika behov.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div class="bg-white rounded-lg p-6 text-center">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-secondary-900 mb-2">Boka Demo</h3>
+            <p class="text-secondary-600">30-minuters personlig demonstration av våra AI-lösningar</p>
+          </div>
+          
+          <div class="bg-white rounded-lg p-6 text-center">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-secondary-900 mb-2">Anpassad Lösning</h3>
+            <p class="text-secondary-600">Vi skräddarsyr AI:n efter dina specifika affärsbehov</p>
+          </div>
+          
+          <div class="bg-white rounded-lg p-6 text-center">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-secondary-900 mb-2">Implementering</h3>
+            <p class="text-secondary-600">Full support under hela implementeringsprocessen</p>
+          </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/sv/contact#book-demo"
+            class="bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+          >
+            Boka Gratis Demo
+          </a>
+          <a 
+            href="/sv/contact"
+            class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+          >
+            Kontakta Oss
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
+          Vad Våra Kunder Säger
+        </h2>
+        <p class="text-lg text-secondary-600">
+          Läs om upplevelser från svenska företag som redan använder våra AI-lösningar.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-secondary-50 rounded-lg p-8">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+              <span class="text-primary-600 font-semibold">M</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-secondary-900">Maria Andersson</h4>
+              <p class="text-sm text-secondary-600">VD, Stockholm Healthcare</p>
+            </div>
+          </div>
+          <p class="text-secondary-600 italic">
+            "HiT3CH:s AI-receptionist har förvandlat hur vi hanterar patienter. Väntetider har minskat dramatiskt och vår personal kan fokusera på det som verkligen betyder något - patientvården."
+          </p>
+        </div>
+        
+        <div class="bg-secondary-50 rounded-lg p-8">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+              <span class="text-primary-600 font-semibold">E</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-secondary-900">Erik Lindberg</h4>
+              <p class="text-sm text-secondary-600">Teknisk Chef, Nordic Energy</p>
+            </div>
+          </div>
+          <p class="text-secondary-600 italic">
+            "Implementeringen var smidig och resultaten överraskade oss alla. AI:n hanterar 90% av våra kundärenden automatiskt, vilket frigör värdefull tid för våra tekniker."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

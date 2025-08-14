@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getTranslation } from '../../utils/translations';
+
+const t = getTranslation('en');
+---
+
+<BaseLayout
+  title="About HiT3CH - AI Solutions for Swedish Businesses"
+  description="Learn about HiT3CH, a leading AI company in Sweden specializing in voice and chat agents for customer service automation."
+  lang="en"
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-primary-50 to-secondary-50 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
+          About HiT3CH
+        </h1>
+        <p class="text-xl text-secondary-600 mb-8 max-w-3xl mx-auto">
+          We're a Swedish AI company dedicated to transforming customer service through intelligent automation. Our mission is to help businesses deliver exceptional customer experiences while reducing costs and improving efficiency.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-secondary-900 mb-8 text-center">
+          Our Mission
+        </h2>
+        <p class="text-lg text-secondary-600 mb-8 text-center">
+          To democratize AI technology for Swedish businesses, making advanced customer service automation accessible to companies of all sizes.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-secondary-900 mb-2">Innovation</h3>
+            <p class="text-secondary-600">Pioneering AI solutions that adapt to Swedish business needs</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-secondary-900 mb-2">Quality</h3>
+            <p class="text-secondary-600">Delivering reliable, GDPR-compliant AI solutions</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-secondary-900 mb-2">Partnership</h3>
+            <p class="text-secondary-600">Building long-term relationships with our clients</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="py-20 bg-secondary-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-secondary-900 mb-8 text-center">
+          Our Story
+        </h2>
+        <div class="prose prose-lg text-secondary-600 max-w-none">
+          <p class="mb-6">
+            Founded in Stockholm, HiT3CH was born from a vision to bridge the gap between cutting-edge AI technology and practical business needs. We recognized that many Swedish companies were struggling with customer service challenges - long response times, language barriers, and the high cost of maintaining large support teams.
+          </p>
+          <p class="mb-6">
+            Our team of AI engineers, linguists, and business experts came together to create solutions that not only solve these problems but also enhance the customer experience. We've developed AI agents that understand Swedish culture, business practices, and language nuances.
+          </p>
+          <p>
+            Today, we're proud to serve businesses across Sweden, from small startups to large enterprises, helping them automate customer service while maintaining the personal touch that Swedish customers expect.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-secondary-900 mb-8">
+          Our Team
+        </h2>
+        <p class="text-lg text-secondary-600 mb-12 max-w-2xl mx-auto">
+          We're a diverse team of AI specialists, language experts, and business professionals committed to delivering exceptional AI solutions for Swedish businesses.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-secondary-50 rounded-lg p-8">
+            <h3 class="text-xl font-semibold text-secondary-900 mb-2">AI & Technology</h3>
+            <p class="text-secondary-600">Our engineers specialize in natural language processing, machine learning, and system integration.</p>
+          </div>
+          
+          <div class="bg-secondary-50 rounded-lg p-8">
+            <h3 class="text-xl font-semibold text-secondary-900 mb-2">Language & Culture</h3>
+            <p class="text-secondary-600">Native Swedish speakers and cultural experts ensure our AI understands local business practices.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-primary-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Ready to Transform Your Business?
+      </h2>
+      <p class="text-xl mb-8 text-primary-100 max-w-2xl mx-auto">
+        Join the growing number of Swedish businesses that trust HiT3CH with their AI automation needs.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="/en/contact"
+          class="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600"
+        >
+          Get Started Today
+        </a>
+        <a 
+          href="/en/services"
+          class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600"
+        >
+          View Our Solutions
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

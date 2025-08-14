@@ -1,11 +1,113 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/baselayout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout
+  title="HiT3CH - AI Voice & Chat Agents for Your Business"
+  description="Automate customer service with AI-powered voice and chat agents. Tailored solutions for Swedish and international businesses. Book your free demo today."
+  lang="en"
+>
+         <!-- Enhanced Language Selection Landing Page -->
+       <section class="hero relative overflow-hidden">
+         <!-- Background decoration -->
+         <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-secondary-50"></div>
+         <div class="absolute top-0 left-0 w-72 h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float"></div>
+         <div class="absolute top-0 right-0 w-72 h-72 bg-secondary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float" style="animation-delay: -1.5s;"></div>
+         <div class="absolute bottom-0 left-0 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float" style="animation-delay: -3s;"></div>
+         
+         <div class="container-custom relative z-10 text-center">
+           <div class="mb-16 animate-fade-in">
+             <div class="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-primary-500 to-secondary-600 rounded-full mb-8 shadow-2xl">
+               <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+               </svg>
+             </div>
+             
+             <h1 class="heading-responsive font-bold text-gradient mb-6 leading-tight">
+               HiT3CH
+             </h1>
+             
+             <p class="text-responsive text-secondary-700 mb-8 max-w-4xl mx-auto font-medium leading-relaxed">
+               AI-Powered Voice & Chat Agents — Tailored for Your Business
+             </p>
+             
+             <p class="text-lg text-secondary-600 max-w-3xl mx-auto leading-relaxed">
+               Automate customer service in Swedish and English with personalized AI. Choose your preferred language to get started.
+             </p>
+           </div>
+
+           <div class="feature-grid max-w-5xl mx-auto mb-16">
+             <a
+               href="/en"
+               class="card-hover group p-8 text-center hover-lift hover-glow"
+             >
+               <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-2xl transition-all duration-300">
+                 <span class="text-3xl font-bold text-white">EN</span>
+               </div>
+               <h3 class="text-2xl font-bold text-secondary-900 mb-3 group-hover:text-primary-600 transition-colors">English</h3>
+               <p class="text-secondary-600 group-hover:text-secondary-700 transition-colors">Explore our AI solutions in English</p>
+               <div class="mt-4 text-primary-500 opacity-0 group-hover:opacity-100 transition-opacity">
+                 <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                 </svg>
+               </div>
+             </a>
+
+             <a
+               href="/sv"
+               class="card-hover group p-8 text-center hover-lift hover-glow"
+             >
+               <div class="w-20 h-20 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-2xl transition-all duration-300">
+                 <span class="text-3xl font-bold text-white">SV</span>
+               </div>
+               <h3 class="text-2xl font-bold text-secondary-900 mb-3 group-hover:text-secondary-600 transition-colors">Svenska</h3>
+               <p class="text-secondary-600 group-hover:text-secondary-700 transition-colors">Utforska våra AI-lösningar på svenska</p>
+               <div class="mt-4 text-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity">
+                 <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                 </svg>
+               </div>
+             </a>
+           </div>
+
+           <div class="card p-8 max-w-4xl mx-auto animate-slide-up">
+             <h3 class="text-xl font-bold text-secondary-900 mb-6">What We Offer</h3>
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+               <div class="text-center p-4 rounded-lg hover:bg-secondary-50 transition-colors">
+                 <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                   <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                   </svg>
+                 </div>
+                 <div>
+                   <strong class="text-secondary-900">AI Receptionist</strong><br>
+                   <span class="text-sm text-secondary-600">Perfect for small to medium businesses</span>
+                 </div>
+               </div>
+               <div class="text-center p-4 rounded-lg hover:bg-secondary-50 transition-colors">
+                 <div class="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                   <svg class="w-6 h-6 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                   </svg>
+                 </div>
+                 <div>
+                   <strong class="text-secondary-900">Custom AI Solutions</strong><br>
+                   <span class="text-sm text-secondary-600">Tailored for enterprise needs</span>
+                 </div>
+               </div>
+               <div class="text-center p-4 rounded-lg hover:bg-secondary-50 transition-colors">
+                 <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                   <svg class="w-6 h-6 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.5 9a3 3 0 11-6 0 3 3 0 016 0zM6.75 9a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM6.75 15a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM9 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM9 15a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12 15a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"></path>
+                   </svg>
+                 </div>
+                 <div>
+                   <strong class="text-secondary-900">Bilingual Support</strong><br>
+                   <span class="text-sm text-secondary-600">Swedish & English capabilities</span>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </section>
+</BaseLayout>

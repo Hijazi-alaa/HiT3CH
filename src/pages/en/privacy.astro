@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Privacy Policy - HiT3CH"
+  description="Learn about how HiT3CH handles and protects your personal information in accordance with GDPR and Swedish legislation."
+  lang="en"
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-primary-50 to-secondary-50 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
+          Privacy Policy
+        </h1>
+        <p class="text-xl text-secondary-600 mb-8 max-w-3xl mx-auto">
+          We value your privacy and are committed to protecting your personal information in accordance with GDPR and Swedish legislation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy Content -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg text-secondary-600 max-w-none">
+        <p class="text-lg mb-8">
+          Last updated: {new Date().toLocaleDateString('en-US')}
+        </p>
+
+        <h2 class="text-2xl font-bold text-secondary-900 mb-6">1. Information We Collect</h2>
+        <p class="mb-6">
+          We only collect information that is necessary to deliver our services and improve your experience:
+        </p>
+        <ul class="list-disc pl-6 mb-8 space-y-2">
+          <li>Contact information (name, email, phone number)</li>
+          <li>Company information (company name, industry, size)</li>
+          <li>Usage data from our AI services</li>
+          <li>Technical information (IP address, browser type, device information)</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-secondary-900 mb-6">2. How We Use Your Information</h2>
+        <p class="mb-6">
+          We use your information to:
+        </p>
+        <ul class="list-disc pl-6 mb-8 space-y-2">
+          <li>Deliver and improve our AI services</li>
+          <li>Communicate with you about our services</li>
+          <li>Provide customer support and technical assistance</li>
+          <li>Comply with legal obligations</li>
+          <li>Improve our products and services</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-secondary-900 mb-6">3. Data Sharing and Transfer</h2>
+        <p class="mb-8">
+          We do not share your personal information with third parties except in the following cases:
+        </p>
+        <ul class="list-disc pl-6 mb-8 space-y-2">
+          <li>With your explicit consent</li>
+          <li>To comply with legal obligations</li>
+          <li>With trusted service providers who help us deliver our services</li>
+          <li>To protect our rights and security</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-secondary-900 mb-6">4. Data Security</h2>
+        <p class="mb-8">
+          We implement robust security measures to protect your information:
+        </p>
+        <ul class="list-disc pl-6 mb-8 space-y-2">
+          <li>Encryption of data in transit and at rest</li>
+          <li>Regular security reviews and updates</li>
+          <li>Limited access to personal information</li>
+          <li>Regular security backups</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-secondary-900 mb-6">5. Your Rights</h2>
+        <p class="mb-6">
+          Under GDPR, you have the following rights:
+        </p>
+        <ul class="list-disc pl-6 mb-8 space-y-2">
+          <li>Right to access your personal information</li>
+          <li>Right to correct inaccurate information</li>
+          <li>Right to delete your information</li>
+          <li>Right to restrict processing</li>
+          <li>Right to data portability</li>
+          <li>Right to object to processing</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-secondary-900 mb-6">6. Cookies and Tracking</h2>
+        <p class="mb-8">
+          We use cookies and similar technologies to improve your experience on our website. You can manage your cookie settings in your browser.
+        </p>
+
+        <h2 class="text-2xl font-bold text-secondary-900 mb-6">7. AI and Machine Learning</h2>
+        <p class="mb-8">
+          Our AI services process data to improve performance and accuracy. All data is processed anonymously and in accordance with GDPR requirements.
+        </p>
+
+        <h2 class="text-2xl font-bold text-secondary-900 mb-6">8. Contact Information</h2>
+        <p class="mb-8">
+          If you have questions about this privacy policy or want to exercise your rights, contact us at:
+        </p>
+        <div class="bg-secondary-50 rounded-lg p-6 mb-8">
+          <p class="font-semibold">HiT3CH AB</p>
+          <p>Email: privacy@hitech.ai</p>
+          <p>Phone: +46 8 123 45 67</p>
+          <p>Address: Stockholm, Sweden</p>
+        </div>
+
+        <h2 class="text-2xl font-bold text-secondary-900 mb-6">9. Changes to This Policy</h2>
+        <p class="mb-8">
+          We may update this privacy policy from time to time. We will notify you of any material changes via email or by posting a notice on our website.
+        </p>
+
+        <h2 class="text-2xl font-bold text-secondary-900 mb-6">10. Complaints</h2>
+        <p class="mb-8">
+          If you believe we are not handling your personal information correctly, you have the right to file a complaint with the Swedish Data Protection Authority (IMY).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-secondary-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
+        Have Questions About Privacy?
+      </h2>
+      <p class="text-xl text-secondary-600 mb-8 max-w-2xl mx-auto">
+        Our team is here to help you and answer all questions about how we handle your information.
+      </p>
+      <a 
+        href="/en/contact"
+        class="bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+      >
+        Contact Us
+      </a>
+    </div>
+  </section>
+</BaseLayout>

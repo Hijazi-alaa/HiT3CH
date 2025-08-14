@@ -8,6 +8,7 @@ export default defineConfig({
   integrations: [
     tailwind({
       applyBaseStyles: false,
+      config: { path: './tailwind.config.mjs' },
     }),
     mdx(),
     sitemap({
@@ -24,7 +25,7 @@ export default defineConfig({
     defaultLocale: 'en',
     locales: ['en', 'sv'],
     routing: {
-      prefixDefaultLocale: true,
+      prefixDefaultLocale: false,
     },
   },
   build: {
