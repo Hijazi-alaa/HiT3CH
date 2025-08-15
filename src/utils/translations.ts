@@ -8,16 +8,15 @@ export const translations = {
       services: 'Services',
       useCases: 'Use Cases & Demo',
       about: 'About',
-      blog: 'Blog',
-      contact: 'Contact',
-      bookDemo: 'Book a Free Demo',
+      contact: 'Contact / Book Demo',
+      bookDemo: 'Book a Free Consultation',
     },
     // Home page
     home: {
-      headline: 'AI-Powered Voice & Chat Agents — Tailored for Your Business',
-      subheadline: 'Automate customer service in Swedish and English with personalized AI.',
-      cta1: 'Book Free Demo',
-      cta2: 'View Services',
+      headline: 'Put AI to work in your business',
+      subheadline: 'We design and integrate AI automations, including voice and chat agents for customer service.',
+      cta1: 'Book a Free Consultation',
+      cta2: 'See a Live Prototype',
       valueProps: {
         title: 'Why Choose HiT3CH AI?',
         saveTime: {
@@ -48,12 +47,10 @@ export const translations = {
       subtitle: 'Choose the perfect AI agent solution for your business needs',
       track1: {
         title: 'AI Receptionist for Small Businesses',
-        price: 'From SEK 20,000',
         desc: 'Perfect for small to medium businesses looking to automate basic customer interactions.',
       },
       track2: {
         title: 'Custom AI for Enterprises',
-        price: 'From SEK 80,000', 
         desc: 'Tailored AI solutions for large organizations with complex workflow requirements.',
       },
       sharedFeatures: {
@@ -97,16 +94,15 @@ export const translations = {
       services: 'Tjänster',
       useCases: 'Användningsfall & Demo',
       about: 'Om Oss',
-      blog: 'Blogg',
-      contact: 'Kontakt',
-      bookDemo: 'Boka Gratis Demo',
+      contact: 'Kontakt / Boka Demo',
+      bookDemo: 'Boka en gratis konsultation',
     },
     // Home page
     home: {
-      headline: 'AI-drivna Röst- & Chattagenter — Anpassade för Ditt Företag',
-      subheadline: 'Automatisera kundservice på svenska och engelska med personlig AI.',
-      cta1: 'Boka Gratis Demo',
-      cta2: 'Se Tjänster',
+      headline: 'Sätt AI i arbete i ditt företag',
+      subheadline: 'Vi designar och integrerar AI-automationer, inklusive röst- och chattagenter för kundservice.',
+      cta1: 'Boka en gratis konsultation',
+      cta2: 'Se en liveprototyp',
       valueProps: {
         title: 'Varför Välja HiT3CH AI?',
         saveTime: {
@@ -137,12 +133,10 @@ export const translations = {
       subtitle: 'Välj den perfekta AI-agentlösningen för dina affärsbehov',
       track1: {
         title: 'AI-receptionist för Småföretag',
-        price: 'Från 20 000 SEK',
         desc: 'Perfekt för små till medelstora företag som vill automatisera grundläggande kundinteraktioner.',
       },
       track2: {
         title: 'Anpassad AI för Företag',
-        price: 'Från 80 000 SEK',
         desc: 'Skräddarsydda AI-lösningar för stora organisationer med komplexa arbetsflödeskrav.',
       },
       sharedFeatures: {

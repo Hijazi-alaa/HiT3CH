@@ -7,7 +7,7 @@ const t = getTranslation('sv');
 
 <BaseLayout
   title="AI-tjänster - Röst- & Chattagenter | HiT3CH"
-  description="Välj från vår AI-receptionist för småföretag (från 20 000 SEK) eller anpassad AI för företag (från 80 000 SEK). Alla lösningar inkluderar röst- & chattfunktioner, automation och GDPR-efterlevnad."
+  description="Välj mellan vår AI-receptionist för småföretag eller anpassad AI för företag. Alla lösningar inkluderar röst- och chattfunktioner, automation och GDPR-efterlevnad."
   lang="sv"
 >
   <!-- Hero Section -->
@@ -40,52 +40,23 @@ const t = getTranslation('sv');
             <h2 class="text-2xl font-bold text-secondary-900 mb-2">
               {t.services.track1.title}
             </h2>
-            <div class="text-3xl font-bold text-primary-600 mb-4">
-              {t.services.track1.price}
-            </div>
             <p class="text-secondary-600 mb-6">
               {t.services.track1.desc}
             </p>
           </div>
+          <ul class="list-disc list-inside text-secondary-700 space-y-2 mb-8">
+            <li><span data-en="Basic appointment scheduling" data-sv="Grundläggande tidbokning">Grundläggande tidbokning</span></li>
+            <li><span data-en="FAQ handling" data-sv="FAQ-hantering">FAQ-hantering</span></li>
+            <li><span data-en="Lead collection" data-sv="Leadinsamling">Leadinsamling</span></li>
+            <li><span data-en="Business hours coverage" data-sv="Öppettidstäckning">Öppettidstäckning</span></li>
+            <li><span data-en="2-week implementation" data-sv="2 veckors implementation">2 veckors implementation</span></li>
+          </ul>
 
-          <div class="space-y-3 mb-8">
-            <div class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-secondary-700">Grundläggande tidbokning</span>
-            </div>
-            <div class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-secondary-700">FAQ-hantering</span>
-            </div>
-            <div class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-secondary-700">Leadinsamling</span>
-            </div>
-            <div class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-secondary-700">Öppettidstäckning</span>
-            </div>
-            <div class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-secondary-700">2 veckors implementation</span>
-            </div>
-          </div>
-
-          <a 
+          <a
             href="/sv/contact"
             class="block w-full bg-primary-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
           >
-            Kom Igång
+            <span data-en="Book a Free Consultation" data-sv="Boka en gratis konsultation">Boka en gratis konsultation</span>
           </a>
         </div>
 
@@ -104,52 +75,23 @@ const t = getTranslation('sv');
             <h2 class="text-2xl font-bold mb-2">
               {t.services.track2.title}
             </h2>
-            <div class="text-3xl font-bold mb-4">
-              {t.services.track2.price}
-            </div>
             <p class="text-primary-100 mb-6">
               {t.services.track2.desc}
             </p>
           </div>
+          <ul class="list-disc list-inside text-primary-100 space-y-2 mb-8">
+            <li><span data-en="Advanced workflow automation" data-sv="Avancerad arbetsflödesautomatisering">Avancerad arbetsflödesautomatisering</span></li>
+            <li><span data-en="Custom integrations" data-sv="Anpassade integrationer">Anpassade integrationer</span></li>
+            <li><span data-en="Multi-department routing" data-sv="Multi-avdelningsroutning">Multi-avdelningsroutning</span></li>
+            <li><span data-en="Advanced analytics" data-sv="Avancerad analys">Avancerad analys</span></li>
+            <li><span data-en="Priority support" data-sv="Prioriterad support">Prioriterad support</span></li>
+          </ul>
 
-          <div class="space-y-3 mb-8">
-            <div class="flex items-center">
-              <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-primary-100">Avancerad arbetsflödesautomatisering</span>
-            </div>
-            <div class="flex items-center">
-              <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-primary-100">Anpassade integrationer</span>
-            </div>
-            <div class="flex items-center">
-              <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-primary-100">Multi-avdelningsroutning</span>
-            </div>
-            <div class="flex items-center">
-              <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-primary-100">Avancerad analys</span>
-            </div>
-            <div class="flex items-center">
-              <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-primary-100">Prioriterad support</span>
-            </div>
-          </div>
-
-          <a 
+          <a
             href="/sv/contact"
             class="block w-full bg-white text-primary-600 text-center py-3 rounded-lg font-semibold hover:bg-primary-50 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600"
           >
-            Kom Igång
+            <span data-en="Book a Free Consultation" data-sv="Boka en gratis konsultation">Boka en gratis konsultation</span>
           </a>
         </div>
       </div>
@@ -257,16 +199,16 @@ const t = getTranslation('sv');
   <section class="py-20 bg-primary-600 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">
-        Redo att Komma Igång?
+        <span data-en="Ready to Get Started?" data-sv="Redo att komma igång?">Redo att komma igång?</span>
       </h2>
       <p class="text-xl mb-8 text-primary-100 max-w-2xl mx-auto">
-        Boka en gratis konsultation för att diskutera vilken AI-lösning som passar ditt företag.
+        <span data-en="Book a free consultation to discuss which AI solution is right for your business." data-sv="Boka en gratis konsultation för att diskutera vilken AI-lösning som passar ditt företag.">Boka en gratis konsultation för att diskutera vilken AI-lösning som passar ditt företag.</span>
       </p>
-      <a 
+      <a
         href="/sv/contact"
         class="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600"
       >
-        Boka Gratis Konsultation
+        <span data-en="Book a Free Consultation" data-sv="Boka gratis konsultation">Boka gratis konsultation</span>
       </a>
     </div>
   </section>

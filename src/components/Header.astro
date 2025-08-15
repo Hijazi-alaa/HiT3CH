@@ -42,9 +42,6 @@ const currentPath = Astro.url.pathname.replace(/^\/(en|sv)/, '') || '/';
         <a href={`/${lang}/about`} class="nav-link" data-current={currentPath === '/about' ? 'true' : 'false'}>
           {t.nav.about}
         </a>
-        <a href={`/${lang}/blog`} class="nav-link" data-current={currentPath === '/blog' ? 'true' : 'false'}>
-          {t.nav.blog}
-        </a>
         <a href={`/${lang}/contact`} class="nav-link" data-current={currentPath === '/contact' ? 'true' : 'false'}>
           {t.nav.contact}
         </a>
@@ -53,8 +50,8 @@ const currentPath = Astro.url.pathname.replace(/^\/(en|sv)/, '') || '/';
       <!-- Right side: Language toggle and CTA -->
       <div class="hidden md:flex items-center space-x-4">
         <LanguageToggle lang={lang} currentPath={currentPath} />
-        <a 
-          href={`/${lang}/contact#book-demo`}
+        <a
+          href={`/${lang}/contact`}
           class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
         >
           {t.nav.bookDemo}
@@ -94,15 +91,12 @@ const currentPath = Astro.url.pathname.replace(/^\/(en|sv)/, '') || '/';
         <a href={`/${lang}/about`} class="mobile-nav-link" data-current={currentPath === '/about' ? 'true' : 'false'}>
           {t.nav.about}
         </a>
-        <a href={`/${lang}/blog`} class="mobile-nav-link" data-current={currentPath === '/blog' ? 'true' : 'false'}>
-          {t.nav.blog}
-        </a>
         <a href={`/${lang}/contact`} class="mobile-nav-link" data-current={currentPath === '/contact' ? 'true' : 'false'}>
           {t.nav.contact}
         </a>
         <div class="pt-2">
           <a 
-            href={`/${lang}/contact#book-demo`}
+            href={`/${lang}/contact`}
             class="block w-full text-center bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium"
           >
             {t.nav.bookDemo}

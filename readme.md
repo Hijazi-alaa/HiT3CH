@@ -7,7 +7,6 @@ A modern, bilingual (English/Swedish) marketing website for HiT3CH AI services, 
 - **Bilingual Support**: English (`/en`) and Swedish (`/sv`) routes with language toggle
 - **Performance Optimized**: Static generation, Core Web Vitals friendly
 - **SEO Ready**: Meta tags, Open Graph, JSON-LD structured data, sitemap
-- **Search**: Integrated Pagefind for blog and use cases search
 - **Analytics**: GDPR-compliant consent management for GA4, LinkedIn, Meta Pixel
 - **Forms**: Contact form with Formspree integration
 - **Booking**: Calendly integration for demos
@@ -27,8 +26,7 @@ A modern, bilingual (English/Swedish) marketing website for HiT3CH AI services, 
 │   │   ├── Footer.astro
 │   │   ├── ConsentManager.astro
 │   │   ├── ContactForm.astro
-│   │   ├── LanguageToggle.astro
-│   │   └── Search.astro
+│   │   └── LanguageToggle.astro
 │   ├── layouts/
 │   │   └── BaseLayout.astro
 │   ├── pages/
@@ -37,7 +35,6 @@ A modern, bilingual (English/Swedish) marketing website for HiT3CH AI services, 
 │   │   │   ├── services.astro
 │   │   │   ├── use-cases.astro
 │   │   │   ├── about.astro
-│   │   │   ├── blog/
 │   │   │   ├── contact.astro
 │   │   │   ├── privacy.astro
 │   │   │   └── 404.astro
@@ -46,7 +43,6 @@ A modern, bilingual (English/Swedish) marketing website for HiT3CH AI services, 
 │   │   ├── constants.ts
 │   │   └── translations.ts
 │   └── content/
-│       └── blog/
 ├── astro.config.mjs
 ├── tailwind.config.mjs
 └── package.json
@@ -178,21 +174,6 @@ jobs:
    - Add custom domain and follow DNS instructions
 
 ## 🔧 Content Management
-
-### Adding Blog Posts
-
-Create MDX files in `src/content/blog/en/` and `src/content/blog/sv/`:
-
-```markdown
----
-title: "Your Post Title"
-description: "Post description"
-date: 2024-01-15
-author: "Author Name"
----
-
-Your content here...
-```
 
 ### Updating Translations
 

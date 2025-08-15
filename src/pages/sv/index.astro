@@ -3,11 +3,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getTranslation } from '../../utils/translations';
 
 const t = getTranslation('sv');
+const tEn = getTranslation('en');
 ---
 
 <BaseLayout
-  title="HiT3CH - AI Röst- & Chattagenter för Ditt Företag"
-  description="Automatisera kundservice med AI-drivna röst- och chattagenter. Skräddarsydda lösningar för svenska och internationella företag. Boka din gratis demo idag."
+  title="HiT3CH - AI-automationer för ditt företag"
+  description="Vi designar och integrerar AI-automationer, inklusive röst- och chattagenter för kundservice. Boka en gratis konsultation eller se en liveprototyp."
   lang="sv"
 >
   <!-- Hero Section -->
@@ -15,23 +16,23 @@ const t = getTranslation('sv');
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
         <h1 class="text-4xl md:text-6xl font-bold text-secondary-900 mb-6">
-          {t.home.headline}
+          <span data-en={tEn.home.headline} data-sv={t.home.headline}>{t.home.headline}</span>
         </h1>
         <p class="text-xl md:text-2xl text-secondary-600 mb-8 max-w-3xl mx-auto">
-          {t.home.subheadline}
+          <span data-en={tEn.home.subheadline} data-sv={t.home.subheadline}>{t.home.subheadline}</span>
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="/sv/contact#book-demo"
+          <a
+            href="/sv/contact"
             class="bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
           >
-            {t.home.cta1}
+            <span data-en={tEn.home.cta1} data-sv={t.home.cta1}>{t.home.cta1}</span>
           </a>
-          <a 
-            href="/sv/services"
+          <a
+            href="/sv/demo"
             class="bg-white text-primary-600 border-2 border-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
           >
-            {t.home.cta2}
+            <span data-en={tEn.home.cta2} data-sv={t.home.cta2}>{t.home.cta2}</span>
           </a>
         </div>
       </div>
@@ -161,17 +162,17 @@ const t = getTranslation('sv');
         Gå med svenska företag som redan använder AI för att leverera enastående kundupplevelser.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a 
-          href="/sv/use-cases"
+        <a
+          href="/sv/demo"
           class="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600"
         >
-          Se Användningsfall & Demo
+          <span data-en="See a Live Prototype" data-sv="Se en liveprototyp">Se en liveprototyp</span>
         </a>
-        <a 
+        <a
           href="/sv/contact"
           class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600"
         >
-          {t.common.contactUs}
+          <span data-en="Book a Free Consultation" data-sv="Boka en gratis konsultation">Boka en gratis konsultation</span>
         </a>
       </div>
     </div>
