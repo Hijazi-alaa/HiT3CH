@@ -31,4 +31,7 @@ export default defineConfig({
   build: {
     format: 'directory',
   },
+  server: {
+    host: true,
+  },
 });
