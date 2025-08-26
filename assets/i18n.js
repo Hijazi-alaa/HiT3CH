@@ -9,6 +9,7 @@ export const translations = {
     nav_solutions: "Lösningar",
     nav_about: "Om oss",
     nav_process: "Process",
+    nav_contact: "Kontakt",
 
     // Hero
     hero_pill: "Lås upp effektiviteten med AI",
@@ -135,6 +136,7 @@ export const translations = {
     nav_solutions: "Solutions",
     nav_about: "About",
     nav_process: "Process",
+    nav_contact: "Contact",
 
     // Hero
     hero_pill: "Unlock efficiency with AI",
