@@ -3,7 +3,7 @@ import { translations } from './i18n.js';
 
 const $ = (s, r = document) => r.querySelector(s);
 
-// --- i18n ---
+/* ---------------- i18n ---------------- */
 function applyLanguage(lang) {
   const dict = translations[lang] || translations.sv;
   document.documentElement.lang = lang;
@@ -23,7 +23,10 @@ function applyLanguage(lang) {
   // Lang toggle labels (header + footer)
   ['lang-toggle', 'lang-toggle-footer'].forEach(id => {
     const btn = document.getElementById(id);
-    if (btn && dict.toggle_lang) btn.querySelector('span') ? (btn.querySelector('span').textContent = dict.toggle_lang) : (btn.textContent = dict.toggle_lang);
+    if (btn && dict.toggle_lang) {
+      const span = btn.querySelector('span');
+      if (span) span.textContent = dict.toggle_lang; else btn.textContent = dict.toggle_lang;
+    }
   });
 
   localStorage.setItem('lang', lang);
@@ -31,7 +34,7 @@ function applyLanguage(lang) {
 
 export function initLanguage() {
   const saved = localStorage.getItem('lang');
-  const initial = saved ? saved : (navigator.language.startsWith('sv') ? 'sv' : 'en');
+  const initial = saved ? saved : (navigator.language?.startsWith('sv') ? 'sv' : 'en');
   applyLanguage(initial);
 
   // Toggle handlers
@@ -39,7 +42,7 @@ export function initLanguage() {
     const btn = document.getElementById(id);
     if (!btn) return;
     btn.addEventListener('click', (e) => {
-      if (e && e.preventDefault) e.preventDefault();
+      e?.preventDefault?.();
       const next = document.documentElement.lang === 'sv' ? 'en' : 'sv';
       applyLanguage(next);
       document.dispatchEvent(new Event('lang-changed'));
@@ -52,7 +55,7 @@ function getLang() {
   return document.documentElement.lang || 'sv';
 }
 
-// --- Modal copy control ---
+/* -------------- Modal copy control -------------- */
 const demoCopy = {
   sv: {
     title: 'Boka demo',
@@ -69,10 +72,9 @@ const demoCopy = {
 function setConsultCopyExplicit() {
   const dict = translations[getLang()] || translations.sv;
   const titleEl = document.getElementById('consult-modal-title');
-  const subEl = document.querySelector('[data-i18n="consult_modal_sub"]');
-  const msgLbl = document.querySelector('label[for="message"]');
+  const subEl   = document.querySelector('[data-i18n="consult_modal_sub"]');
+  const msgLbl  = document.querySelector('label[for="message"]');
 
-  // restore data-i18n bindings
   if (titleEl) {
     titleEl.setAttribute('data-i18n', 'consult_modal_title');
     titleEl.textContent = dict.consult_modal_title;
@@ -91,10 +93,9 @@ function setDemoCopyExplicit() {
   const lang = getLang();
   const dc = demoCopy[lang] || demoCopy.sv;
   const titleEl = document.getElementById('consult-modal-title');
-  const subEl = document.querySelector('[data-i18n="consult_modal_sub"], .consult-sub-frozen');
-  const msgLbl = document.querySelector('label[for="message"]');
+  const subEl   = document.querySelector('[data-i18n="consult_modal_sub"], .consult-sub-frozen');
+  const msgLbl  = document.querySelector('label[for="message"]');
 
-  // freeze text so language toggle does not override while open
   if (titleEl) {
     titleEl.removeAttribute('data-i18n');
     titleEl.textContent = dc.title;
@@ -110,30 +111,28 @@ function setDemoCopyExplicit() {
   }
 }
 
-// If user changes language while modal with consult defaults is open, refresh to current lang
 function refreshConsultDefaultsIfOpen() {
   const modal = document.getElementById('contact-modal');
   if (!modal) return;
   const isOpen = modal.getAttribute('aria-hidden') === 'false';
   if (!isOpen) return;
 
-  // Only refresh if elements still have consult data-i18n attributes
   const titleEl = document.getElementById('consult-modal-title');
-  const subEl = document.querySelector('[data-i18n="consult_modal_sub"]');
-  const msgLbl = document.querySelector('label[for="message"][data-i18n="form_message"]');
+  const subEl   = document.querySelector('[data-i18n="consult_modal_sub"]');
+  const msgLbl  = document.querySelector('label[for="message"][data-i18n="form_message"]');
   if (titleEl || subEl || msgLbl) setConsultCopyExplicit();
 }
 
-// --- Modal + Focus trap + Submit ---
+/* -------------- Contact modal -------------- */
 function setupModal() {
   const modal = document.getElementById('contact-modal');
   if (!modal) return;
 
-  const openers = document.querySelectorAll('[data-modal-open]');
+  const openers  = document.querySelectorAll('[data-modal-open]');
   const closeBtn = document.getElementById('modal-close');
-  const form = document.getElementById('contact-form');
-  const success = document.getElementById('form-success');
-  const modalCard = document.getElementById('modal-card');
+  const form     = document.getElementById('contact-form');
+  const success  = document.getElementById('form-success');
+  const modalCard= document.getElementById('modal-card');
 
   let mode = 'consult'; // 'consult' | 'demo'
 
@@ -150,9 +149,9 @@ function setupModal() {
   }
 
   function open(e) {
-    if (e && e.preventDefault) e.preventDefault();
+    e?.preventDefault?.();
 
-    // Determine mode by opener location: inside #contact => consult, otherwise demo
+    // inside #contact => consult, otherwise demo
     const opener = e?.currentTarget || e?.target;
     mode = opener && opener.closest('#contact') ? 'consult' : 'demo';
 
@@ -161,16 +160,12 @@ function setupModal() {
     form.classList.remove('hidden');
     success?.classList.add('hidden');
 
-    // Set copy by mode
-    if (mode === 'demo') setDemoCopyExplicit();
-    else setConsultCopyExplicit();
+    if (mode === 'demo') setDemoCopyExplicit(); else setConsultCopyExplicit();
 
-    // Open modal
     modal.classList.remove('hidden');
     modal.setAttribute('aria-hidden', 'false');
-    modalCard?.classList.remove('translate-y-2', 'opacity-0');
-    const first = focusables()[0];
-    if (first) first.focus();
+    modalCard?.classList.remove('translate-y-2','opacity-0');
+    const first = focusables()[0]; first?.focus();
     document.addEventListener('keydown', trap);
   }
 
@@ -178,8 +173,6 @@ function setupModal() {
     modal.classList.add('hidden');
     modal.setAttribute('aria-hidden', 'true');
     document.removeEventListener('keydown', trap);
-
-    // Restore consult defaults for next open
     setConsultCopyExplicit();
     clearErrors();
   }
@@ -190,7 +183,7 @@ function setupModal() {
   });
   closeBtn?.addEventListener('click', close);
 
-  // --- Validation helpers ---
+  // Validation helpers
   const showError = (id, msg) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -198,17 +191,17 @@ function setupModal() {
     el.classList.remove('hidden');
   };
   function clearErrors() {
-    ['err-name', 'err-company', 'err-email', 'err-message', 'form-error'].forEach(id => {
+    ['err-name','err-company','err-email','err-message','form-error'].forEach(id => {
       const el = document.getElementById(id);
       if (el) { el.textContent = ''; el.classList.add('hidden'); }
     });
-    ['name', 'company', 'email', 'message'].forEach(id => {
+    ['name','company','email','message'].forEach(id => {
       const inp = document.getElementById(id);
-      inp?.setAttribute('aria-invalid', 'false');
+      inp?.setAttribute('aria-invalid','false');
     });
   }
 
-  // --- Form submit (Formspree) ---
+  // Submit (Formspree)
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -220,33 +213,31 @@ function setupModal() {
 
     clearErrors();
 
-    // validation
     let ok = true;
     if (!name.value.trim()) {
-      ok = false; showError('err-name', getLang() === 'sv' ? 'Namn krävs.' : 'Name is required.'); name.setAttribute('aria-invalid', 'true');
+      ok = false; showError('err-name', getLang()==='sv' ? 'Namn krävs.' : 'Name is required.'); name.setAttribute('aria-invalid','true');
     }
     if (!company.value.trim()) {
-      ok = false; showError('err-company', getLang() === 'sv' ? 'Företag krävs.' : 'Company is required.'); company.setAttribute('aria-invalid', 'true');
+      ok = false; showError('err-company', getLang()==='sv' ? 'Företag krävs.' : 'Company is required.'); company.setAttribute('aria-invalid','true');
     }
     const emailVal = email.value.trim();
     const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!emailVal) {
-      ok = false; showError('err-email', getLang() === 'sv' ? 'E-post krävs.' : 'Email is required.'); email.setAttribute('aria-invalid', 'true');
+      ok = false; showError('err-email', getLang()==='sv' ? 'E-post krävs.' : 'Email is required.'); email.setAttribute('aria-invalid','true');
     } else if (!emailRe.test(emailVal)) {
-      ok = false; showError('err-email', getLang() === 'sv' ? 'Ange en giltig e-postadress.' : 'Enter a valid email address.'); email.setAttribute('aria-invalid', 'true');
+      ok = false; showError('err-email', getLang()==='sv' ? 'Ange en giltig e-postadress.' : 'Enter a valid email address.'); email.setAttribute('aria-invalid','true');
     }
     if (!ok) { (document.querySelector('[aria-invalid="true"]'))?.focus(); return; }
 
-    // optional: include mode in payload
     const fd = new FormData(form);
     fd.append('request_type', mode);
     if (!message.value.trim() && mode === 'demo') {
-      fd.set('message', getLang() === 'sv' ? 'Intresserad av en demo.' : 'Interested in a demo.');
+      fd.set('message', getLang()==='sv' ? 'Intresserad av en demo.' : 'Interested in a demo.');
     }
 
     const FORMSPREE_ID = 'mwpnezzr';
     submitBtn.disabled = true;
-    submitBtn.classList.add('opacity-60', 'cursor-not-allowed');
+    submitBtn.classList.add('opacity-60','cursor-not-allowed');
 
     try {
       const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
@@ -259,12 +250,11 @@ function setupModal() {
         const lang = getLang();
         const dict = translations[lang] || translations.sv;
 
-        // Success copy (generic)
         const titleEl = document.getElementById('consult-modal-title');
-        const subEl = document.querySelector('.consult-sub-frozen') || document.querySelector('[data-i18n="consult_modal_sub"]');
+        const subEl   = document.querySelector('.consult-sub-frozen') || document.querySelector('[data-i18n="consult_modal_sub"]');
 
-        if (titleEl) { titleEl.removeAttribute('data-i18n'); titleEl.textContent = dict.consult_success_title || (lang === 'sv' ? 'Tack — din förfrågan är skickad' : 'Thanks — your request was sent'); }
-        if (subEl) { subEl.removeAttribute('data-i18n'); subEl.textContent = dict.consult_success_sub || (lang === 'sv' ? 'Vi återkommer inom 1 arbetsdag.' : 'We’ll get back within 1 business day.'); }
+        if (titleEl) { titleEl.removeAttribute('data-i18n'); titleEl.textContent = dict.consult_success_title || (lang==='sv' ? 'Tack — din förfrågan är skickad' : 'Thanks — your request was sent'); }
+        if (subEl)   { subEl.removeAttribute('data-i18n');   subEl.textContent   = dict.consult_success_sub   || (lang==='sv' ? 'Vi återkommer inom 1 arbetsdag.' : 'We’ll get back within 1 business day.'); }
 
         form.classList.add('hidden');
         success?.classList.remove('hidden');
@@ -272,26 +262,31 @@ function setupModal() {
         document.getElementById('modal-close')?.focus();
       } else {
         const fe = document.getElementById('form-error');
-        fe.textContent = getLang() === 'sv' ? 'Kunde inte skicka. Försök igen.' : 'Submit failed. Please try again.';
+        fe.textContent = getLang()==='sv' ? 'Kunde inte skicka. Försök igen.' : 'Submit failed. Please try again.';
         fe.classList.remove('hidden');
       }
     } catch {
       const fe = document.getElementById('form-error');
-      fe.textContent = getLang() === 'sv' ? 'Nätverksfel. Försök igen.' : 'Network error. Please try again.';
+      fe.textContent = getLang()==='sv' ? 'Nätverksfel. Försök igen.' : 'Network error. Please try again.';
       fe.classList.remove('hidden');
     } finally {
       submitBtn.disabled = false;
-      submitBtn.classList.remove('opacity-60', 'cursor-not-allowed');
+      submitBtn.classList.remove('opacity-60','cursor-not-allowed');
     }
   });
 
-  // Optional: close on Escape and simple enter animation
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') close();
+    if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+      modal.classList.add('hidden');
+      modal.setAttribute('aria-hidden', 'true');
+      document.removeEventListener('keydown', trap);
+      setConsultCopyExplicit();
+      clearErrors();
+    }
   });
 }
 
-// Smooth scroll + header-aware + precise manual mode
+/* -------------- Smooth scroll (header-aware) -------------- */
 function setupSmoothScroll() {
   const navLinks = Array.from(document.querySelectorAll('header [data-scroll]'));
   if (!navLinks.length) return;
@@ -300,9 +295,9 @@ function setupSmoothScroll() {
   const headerH = () => (header?.offsetHeight || 0);
 
   function setActiveLinkBySelector(sel) {
-    navLinks.forEach(a => a.classList.remove('text-cyan-400', 'border-cyan-400'));
+    navLinks.forEach(a => a.classList.remove('text-cyan-400','border-cyan-400'));
     const hit = navLinks.find(a => a.getAttribute('data-scroll') === sel);
-    if (hit) hit.classList.add('text-cyan-400', 'border-cyan-400');
+    if (hit) hit.classList.add('text-cyan-400','border-cyan-400');
   }
 
   navLinks.forEach(a => {
@@ -312,88 +307,62 @@ function setupSmoothScroll() {
       const el = document.querySelector(sel);
       if (!el) return;
 
-      // underline immediately
       setActiveLinkBySelector(sel);
 
-      // compute target so the section ends just under the header
-      const targetY = Math.max(
-        0,
-        Math.round(el.getBoundingClientRect().top + window.pageYOffset - (headerH() + 8))
-      );
+      const targetY = Math.max(0, Math.round(el.getBoundingClientRect().top + window.pageYOffset - (headerH() + 8)));
 
-      // enter manual mode until we actually arrive
       window.__manualNav = true;
       window.scrollTo({ top: targetY, behavior: 'smooth' });
       if (history.replaceState) history.replaceState(null, '', sel);
 
-      // watch scroll until we're “close enough”, then release manual mode
       const done = () => {
         window.__manualNav = false;
         window.removeEventListener('scroll', onScrollCheck, { passive: true });
-        // nudge scroll-spy to recompute immediately
         window.dispatchEvent(new Event('scroll'));
       };
       const onScrollCheck = () => {
         if (Math.abs(window.pageYOffset - targetY) < 2) done();
       };
       window.addEventListener('scroll', onScrollCheck, { passive: true });
-
-      // safety: if the browser stops early, release after 2s
       setTimeout(() => { if (window.__manualNav) done(); }, 2000);
     });
   });
 }
 
-
-
-// ---- Active nav on scroll (robust) (replace your current setupScrollSpy)
+/* -------------- Scroll spy -------------- */
 function setupScrollSpy() {
   const links = Array.from(document.querySelectorAll('header [data-scroll]'));
   if (!links.length) return;
 
-  const map = new Map(); // "#id" -> <a>
+  const map = new Map();
   links.forEach(a => map.set(a.getAttribute('data-scroll'), a));
 
   const sections = [
     '#problems-solutions',
     '#why-hit3ch',
     '#process',
+    '#faq',
     '#contact'
   ].map(sel => document.querySelector(sel)).filter(Boolean);
 
   const header = document.querySelector('header');
   const headerH = () => (header?.offsetHeight || 0);
 
-  function updateActive() {
-    if (window.__manualNav) return;
-
-    if (window.scrollY < Math.max(40, headerH() + 8)) {
-      clearActive();
-      return;
-    }
-
-    const y = headerH() + 12;
-  }
-  const clearActive = () => links.forEach(a => a.classList.remove('text-cyan-400', 'border-cyan-400'));
+  const clearActive = () => links.forEach(a => a.classList.remove('text-cyan-400','border-cyan-400'));
   const setActiveId = (id) => {
     clearActive();
     const link = map.get(`#${id}`);
-    if (link) link.classList.add('text-cyan-400', 'border-cyan-400');
+    if (link) link.classList.add('text-cyan-400','border-cyan-400');
   };
 
   function updateActive() {
-    // don’t fight user click while smooth-scrolling
     if (window.__manualNav) return;
 
-    // show nothing while we're still on the hero/top
     if (window.scrollY < Math.max(40, headerH() + 8)) { clearActive(); return; }
 
-    const y = headerH() + 8; // probe line below fixed header
+    const y = headerH() + 8;
     const docBottom = window.scrollY + window.innerHeight;
-    const maxScroll = Math.max(
-      document.body.scrollHeight,
-      document.documentElement.scrollHeight
-    );
+    const maxScroll = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
     const nearBottom = maxScroll - docBottom < 40;
 
     if (nearBottom) { setActiveId(sections[sections.length - 1].id); return; }
@@ -418,15 +387,170 @@ function setupScrollSpy() {
   window.addEventListener('resize', onScroll);
   document.addEventListener('lang-changed', onScroll);
 
-  // initial (will clear since we’re at the top)
   updateActive();
 }
 
+/* -------------- FAQ Accordion (Option 1) -------------- */
+/* HTML expectation per item:
+  <div class="faq-item">
+    <button class="faq-q" data-accordion="faq" aria-expanded="false" aria-controls="faq-a-1" id="faq-q-1">
+      <span data-i18n="faq_q1"></span>
+      <i class="fa-solid fa-chevron-down ml-2" aria-hidden="true"></i>
+    </button>
+    <div class="faq-a max-h-0 overflow-hidden transition-[max-height] duration-300"
+         id="faq-a-1" role="region" aria-labelledby="faq-q-1">
+      <p class="mt-3 text-slate-300" data-i18n="faq_a1"></p>
+    </div>
+  </div>
+*/
+function setupFAQAccordion() {
+  const buttons = Array.from(document.querySelectorAll('[data-accordion="faq"]'));
+  if (!buttons.length) return;
 
-// Single init point
+  const panels = new Map(); // btn -> panel
+  buttons.forEach(btn => {
+    const panel = btn.nextElementSibling;
+    if (!(panel instanceof HTMLElement)) return;
+    panels.set(btn, panel);
+
+    // collapse initially
+    btn.setAttribute('aria-expanded', 'false');
+    panel.style.maxHeight = '0px';
+
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      // close all others
+      buttons.forEach(b => {
+        if (b !== btn) {
+          b.setAttribute('aria-expanded', 'false');
+          const p = panels.get(b);
+          if (p) p.style.maxHeight = '0px';
+        }
+      });
+      // toggle this one
+      btn.setAttribute('aria-expanded', String(!expanded));
+      if (!expanded) {
+        requestAnimationFrame(() => {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        });
+      } else {
+        panel.style.maxHeight = '0px';
+      }
+    });
+  });
+
+  // Recompute heights if language changes (text length changes)
+  document.addEventListener('lang-changed', () => {
+    buttons.forEach(btn => {
+      const panel = panels.get(btn);
+      if (!panel) return;
+      if (btn.getAttribute('aria-expanded') === 'true') {
+        panel.style.maxHeight = 'none';
+        const h = panel.scrollHeight;
+        panel.style.maxHeight = h + 'px';
+      } else {
+        panel.style.maxHeight = '0px';
+      }
+    });
+  });
+}
+
+/* -------------- Cookie banner -------------- */
+const cookieCopy = {
+  sv: {
+    text: 'HiT3CH behandlar endast de personuppgifter som du själv lämnar via vårt kontaktformulär eller e-post. Uppgifterna används enbart för att besvara din förfrågan och sparas i högst 12 månader.',
+    ok: 'Okej'
+  },
+  en: {
+    text: 'HiT3CH only processes the personal data you provide via our contact form or email. The data is used solely to respond to your inquiry and is stored for a maximum of 12 months.',
+    ok: 'Got it'
+  }
+};
+
+function setupCookieBanner() {
+  const KEY = 'cookie_ack_v1';
+  if (localStorage.getItem(KEY) === '1') return;
+
+  let banner;
+
+  function render() {
+    const lang = getLang();
+    const cc = cookieCopy[lang] || cookieCopy.sv;
+
+    if (!banner) {
+      banner = document.createElement('div');
+      banner.id = 'cookie-banner';
+      banner.className = 'fixed inset-x-0 bottom-4 z-[60] flex justify-center pointer-events-none';
+      document.body.appendChild(banner);
+    }
+
+    banner.innerHTML = `
+      <div class="pointer-events-auto mx-4 md:mx-0 w-full max-w-screen-md
+                  rounded-xl border border-slate-700/70 bg-slate-900/95 backdrop-blur
+                  shadow-lg p-4 md:p-5 text-slate-200">
+        <div class="flex items-start gap-3">
+          <i class="fa-solid fa-circle-info mt-0.5" aria-hidden="true"></i>
+          <p class="text-sm leading-relaxed flex-1">${cc.text}</p>
+          <button id="cookie-ok"
+                  class="ml-3 shrink-0 inline-flex items-center rounded-md px-3 py-2 text-sm font-medium
+                         border border-slate-600 bg-slate-800/80 text-slate-200
+                         hover:border-cyan-400 hover:text-white hover:shadow-[0_0_12px_rgba(34,211,238,0.8)]
+                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300
+                         transition">
+            ${cc.ok}
+          </button>
+        </div>
+      </div>
+    `;
+
+    banner.querySelector('#cookie-ok')?.addEventListener('click', () => {
+      localStorage.setItem(KEY, '1');
+      banner.remove();
+    });
+  }
+
+  render();
+
+  // Re-render text if language changes (until dismissed)
+  document.addEventListener('lang-changed', () => {
+    if (!document.getElementById('cookie-banner')) return;
+    render();
+  });
+}
+
+/* -------------- Privacy modal (footer trigger) -------------- */
+function setupPrivacyModal() {
+  const modal   = document.getElementById('privacy-modal');
+  const openBtn = document.getElementById('privacy-open');
+  const closeBtn= document.getElementById('privacy-close');
+
+  if (!modal || !openBtn || !closeBtn) return;
+
+  function open() {
+    modal.classList.remove('hidden');
+    modal.setAttribute('aria-hidden', 'false');
+  }
+  function close() {
+    modal.classList.add('hidden');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  openBtn.addEventListener('click', (e) => { e.preventDefault(); open(); });
+  closeBtn.addEventListener('click', close);
+  modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') close();
+  });
+}
+
+/* -------------- Init -------------- */
 document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   setupModal();
   setupSmoothScroll();
   setupScrollSpy();
+  setupFAQAccordion();
+  setupCookieBanner();
+  setupPrivacyModal();
 });

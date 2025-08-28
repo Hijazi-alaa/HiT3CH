@@ -2,45 +2,45 @@
 export const translations = {
   sv: {
     // Meta
-    meta_title: "HiT3CH – Lås upp effektiviteten med AI",
-    meta_description: "Smarta AI‑lösningar för kundsupport, marknadsföring och arbetsflöden. Boka ett möte och kom igång snabbt.",
+    meta_title: "AI-automation för företag | HiT3CH",
+    meta_description: "AI-automation som minskar kostnader och ökar kundnöjdhet. AI-kundsupport, AI-chattbotar och arbetsflödesautomation för svenska företag. Boka gratis AI-konsultation.",
 
     // Nav
     nav_solutions: "Lösningar",
     nav_about: "Om oss",
     nav_process: "Process",
+    nav_faq: "FAQ",
     nav_contact: "Kontakt",
 
     // Hero
-    hero_pill: "Lås upp effektiviteten med AI",
-    hero_title: "AI-lösningar anpassade för din verksamhet",
-    hero_sub: "Från kundtjänstagenter till workflow-automation – vi bygger AI som minskar väntetider, tar bort upprepningar och ger ditt team fokus.",
-    cta_primary: "Boka demo",
-    cta_secondary: "Se lösningar",
-    cta_primary_header: "Kontakt",
+    hero_pill: "Lås upp effektivitet med AI",
+    hero_title: "AI-automation: kundsupport, chattbotar & arbetsflöden",
+    hero_sub: "Automatisering med AI för småföretag och B2B – AI-kundtjänst, AI-verktyg för marknadsföring och workflow-automation som ger mätbara resultat.",
+    cta_primary: "Boka AI-demo",
+    cta_secondary: "Se AI-lösningar",
 
     // Problem -> Solution
-    problem_solution_title: "Från tidstjuvar till effektivitet",
+    problem_solution_title: "AI-lösningar för företag",
 
     // Row 1
     ps1_problem: "Telefonen ringer konstant — kunder väntar, och personalen fastnar i bokningar och vidarekopplingar.",
-    ps1_solution: "AI‑agent som svarar, bokar och kopplar vidare 24/7.",
-    ps1_solution_desc: "En virtuell receptionist som hanterar samtal och bokningar automatiskt, utan väntetider.",
+    ps1_solution: "AI-kundsupport som svarar, bokar och kopplar vidare 24/7",
+    ps1_solution_desc: "AI-chattbot/voicebot som hanterar vanliga frågor och bokningar med mänsklig eskalering.",
 
     // Row 2
-    ps2_problem: "B2B‑pipen stannar — prospektering går långsamt, leaddata är rörig och uppföljningar glider.",
-    ps2_solution: "AI‑driven prospektering och outreach som kvalificerar och bokar möten.",
-    ps2_solution_desc: "Berika konton, prioritera ICP, skapa mejl och schemalägg sekvenser med mänskligt godkännande.",
+    ps2_problem: "B2B-pipen stannar — prospektering och uppföljning tar tid.",
+    ps2_solution: "AI-verktyg för marknadsföring och outreach",
+    ps2_solution_desc: "Automatiserad prospektering, personaliserade mejl och mötesbokning med godkännande.",
 
     // Row 3
     ps3_problem: "Pappersarbete och uppföljning tar tid — bokningar, fakturor och påminnelser glider isär.",
-    ps3_solution: "Workflow‑automation triggat av e‑post, formulär eller CRM.",
-    ps3_solution_desc: "Automatiska flöden som skapar ärenden, skickar påminnelser och uppdaterar systemen åt dig.",
+    ps3_solution: "Workflow-automation i era system",
+    ps3_solution_desc: "Automatiska flöden med hjälp av AI som skapar ärenden, skickar och uppdaterar systemen åt dig.",
 
     // Why HiT3CH
     why_kicker: "Om & Varför",
-    why_title: "Varför HiT3CH",
-    why_intro: "Vi är en svensk AI‑partner som designar, bygger och förbättrar lösningar utifrån era verkliga arbetsflöden. Skräddarsytt före mallar. Efterlevnad som standard. Stöd både under och efter lansering.",
+    why_title: "Varför välja HiT3CH för AI-automation",
+    why_intro: "Svensk partner som designar AI-lösningar för företag — från AI-kundtjänst till arbetsflödesautomation.",
 
     why_point1_title: "Skräddarsydda lösningar",
     why_point1_text: "Vi anpassar automationen till era processer och ert systemlandskap — inte tvärtom.",
@@ -63,31 +63,52 @@ export const translations = {
     why_note: "Siffror bygger på pilotprojekt och vanliga uppdrag. Utfallet beror på data och integrationer.",
 
     // Process
-    process_title: "Så arbetar vi",
-    process_sub: "En beprövad metod som gör varje projekt fokuserat, tydligt och effektivt.",
+    process_title: "Så levererar vi AI-automation",
+    process_sub: "Tydlig process från analys till drift.",
+    process1_title: "Analys av kundservice & arbetsflöden",
+    process1_text: "Kartlägger utmaningar i kundtjänst, marknadsföring och interna processer.",
+    process2_title: "Prototyp: AI-chattbot/agent",
+    process2_text: "Snabb prototyp med verkliga data och tydliga mål.",
+    process3_title: "Implementering & integration",
+    process3_text: "Integration med telefoni, CRM och verktyg ni redan använder.",
+    process4_title: "Optimering & uppföljning",
+    process4_text: "Mäter svarstid, CSAT och konvertering — itererar för effekt.",
 
-    process1_title: "Utvärdera",
-    process1_text: "Vi börjar med din verklighet. Tillsammans analyserar vi era arbetsflöden, kundkontakter och mål. På så sätt löser vi rätt problem med AI — inte bara lägger till teknik för sakens skull.",
+    // FAQ
+    faq_title: "Vanliga frågor (FAQ)",
+    faq_sub: "Snabba svar om AI-automation, AI-kundsupport och chattbotar.",
 
-    process2_title: "Bygga",
-    process2_text: "Skräddarsydda lösningar, inga mallar. Utifrån utvärderingen designar och implementerar vi AI-lösningar anpassade till era system och arbetssätt — från röst- och chattagenter till workflow-automation.",
+    faq_q0: "Vad är HiT3CH?",
+    faq_a0: "HiT3CH är en svensk leverantör av AI-automation för företag. Vi erbjuder AI-kundsupport, AI-chattbotar, arbetsflödesautomation och AI-verktyg för marknadsföring. Som AI-konsult inom automatisering hjälper vi både små och medelstora företag att effektivisera kundservice och processer.",
 
-    process3_title: "Leverera",
-    process3_text: "Smidig start, tydlig överlämning. Vi lanserar lösningen med utbildning och integration så att ert team känner sig tryggt från dag ett. Varje leverans inkluderar stöd under införandet.",
+    faq_q1: "Vad är AI-automation och hur kommer vi igång?",
+    faq_a1: "AI-automation använder modeller och regler för att automatisera återkommande uppgifter i kundtjänst, marknadsföring och interna flöden. Vi börjar med ett 30-minuters samtal, ringar in målen och föreslår en pilot.",
 
-    process4_title: "Följa upp & Förbättra",
-    process4_text: "AI som växer med ditt företag. Vi följer upp resultat, samlar feedback och optimerar lösningen. När era behov förändras utvecklar och förfinar vi automatiseringen.",
+    faq_q2: "Fungerar AI-kundtjänst tillsammans med vårt CRM/telefoni?",
+    faq_a2: "Ja, vi integrerar med vanliga system (t.ex. CRM, helpdesk och telefoni). Vi levererar AI-kundtjänst programvara som kopplas säkert till era verktyg.",
+
+    faq_q3: "Hur tränas en AI-chattbot på vårt innehåll?",
+    faq_a3: "Vi kopplar boten till er kunskapsbas/FAQ och styr svar med policies och testfall. Ni godkänner innan skarp drift.",
+
+    faq_q4: "Hur mäter vi effekt av AI-lösningar för företag?",
+    faq_a4: "Vi följer KPI:er som svarstid, lösningsgrad, CSAT och kostnad per ärende. Ni får regelbundna rapporter och förbättringsförslag.",
+
+    faq_q5: "Vad kostar en AI-chattbot för kundservice?",
+    faq_a5: "Priset på AI-chattbot för kundservice varierar beroende på volym, språk och integrationer. Vanligt är en startkostnad för implementation och en månadskostnad baserad på användning. Kontakta oss för en offert på AI-chattbot pris.",
+
+    faq_q6: "Kan vi börja litet och växa över tid?",
+    faq_a6: "Absolut. Vi startar med en avgränsad pilot (t.ex. FAQ i chatten) och skalar med fler use-case när ni ser värde.",
+
 
     //final CTA
-    consult_kicker: "Gratis rådgivning",
-    consult_title: "Få en gratis konsultation nu",
-    consult_sub: "Ett fokuserat 30-minuters möte där vi identifierar flaskhalsar och visar hur automation kan skapa mätbara förbättringar i er verksamhet.",
+    consult_kicker: "Gratis AI-konsultation",
+    consult_title: "Få en gratis AI-konsultation",
+    consult_sub: "30 minuter där vi identifierar var AI-automation ger störst effekt.",
+    consult_b1: "Identifiera nyckelutmaningar i kundsupport och arbetsflöden.",
+    consult_b2: "Få konkreta förslag på AI-kundtjänst, chattbot och automation.",
+    consult_b3: "Tydliga nästa steg — utan förpliktelser.",
+    consult_cta: "Boka gratis AI-konsultation",
 
-    consult_b1: "Identifiera nyckelutmaningar – vi kartlägger era flaskhalsar.",
-    consult_b2: "Få skräddarsydda förslag – konkreta idéer utifrån era mål.",
-    consult_b3: "Besluta i er takt – tydliga nästa steg utan förpliktelser.",
-
-    consult_cta: "Boka gratis konsultation",
     consult_side_title: "Vad ni får",
     consult_side_sub: "Ett kort och fokuserat samtal med en tydlig plan.",
     consult_stat1_v: "2–4v",
@@ -110,6 +131,7 @@ export const translations = {
     form_success: "Tack! Vi hör av oss snart.",
 
     // Footer
+    sfooter_contact: "Kontakt",
     footer_rights: "Alla rättigheter förbehållna.",
 
     // Toggle label
@@ -124,18 +146,25 @@ export const translations = {
     solution2_title: "AI Marknadsföring",
     solution2_text: "Automatiserad leadgenerering och vänlig outreach som känns personlig.",
     solution3_title: "AI Arbetsflöden",
-    solution3_text: "Automatisera bokningar, påminnelser, fakturor och små tidstjuvar."
+    solution3_text: "Automatisera bokningar, påminnelser, fakturor och små tidstjuvar.",
+
+    // Privacy Policy
+    footer_privacy: "Integritetspolicy",
+    privacy_title: "Integritetspolicy",
+    privacy_intro_sv: "HiT3CH behandlar endast de personuppgifter som du själv lämnar via vårt kontaktformulär eller e-post. Uppgifterna används enbart för att besvara din förfrågan och sparas i högst 12 månader.",
+    privacy_rights_sv: "Du har rätt att begära utdrag, rättelse eller radering av dina uppgifter. Kontakta oss via alaa.hijazi@hit3ch.com."
   },
 
   en: {
     // Meta
-    meta_title: "HiT3CH – Unlock efficiency with AI",
-    meta_description: "Smart AI for customer support, marketing, and workflows. Book a meeting and get started fast.",
+    meta_title: "AI Automation for Businesses | HiT3CH",
+    meta_description: "AI automation that cuts costs and lifts CSAT. AI customer support, AI chatbots and workflow automation for SMEs. Book a free AI consultation.",
 
     // Nav
     nav_solutions: "Solutions",
     nav_about: "About",
     nav_process: "Process",
+    nav_faq: "FAQ",
     nav_contact: "Contact",
 
     // Hero
@@ -144,29 +173,28 @@ export const translations = {
     hero_sub: "From customer support agents to workflow automation – we design AI that cuts waiting time, removes repetition, and gives your team focus.",
     cta_primary: "Book demo",
     cta_secondary: "See solutions",
-    cta_primary_header: "Contact",
 
     // Problem -> Solution
-    problem_solution_title: "From time-thieves to efficiency",
+    problem_solution_title: "AI solutions for companies",
 
     // Row 1
-    ps1_problem: "Phones never stop ringing—customers wait and staff get stuck doing bookings and transfers.",
-    ps1_solution: "AI agent that answers, books, and transfers 24/7.",
-    ps1_solution_desc: "A virtual receptionist that handles calls and bookings automatically with no wait times.",
+    ps1_problem: "The phone never stops ringing — customers wait, and staff get stuck in bookings and transfers.",
+    ps1_solution: "AI customer support that answers, books, and routes 24/7",
+    ps1_solution_desc: "AI chatbot/voicebot that handles common questions and bookings with human escalation.",
 
     // Row 2
-    ps2_problem: "B2B pipeline stalls—prospecting is slow, lead data is messy, and follow‑ups slip.",
-    ps2_solution: "AI‑driven prospecting and outreach that qualifies and books meetings.",
-    ps2_solution_desc: "Enrich accounts, prioritize ICPs, generate emails, and schedule sequences with human approval.",
+    ps2_problem: "The B2B pipeline stalls — prospecting and follow-ups take too much time.",
+    ps2_solution: "AI marketing and outreach tools",
+    ps2_solution_desc: "Automated prospecting, personalized emails, and meeting booking with approval.",
 
     // Row 3
-    ps3_problem: "Paperwork and follow‑ups eat time—bookings, invoices, and reminders slip.",
-    ps3_solution: "Workflow automation triggered by email, forms, or CRM.",
-    ps3_solution_desc: "Automated flows that create tasks, send reminders, and update systems for you.",
+    ps3_problem: "Paperwork and follow-ups drain time — bookings, invoices, and reminders slip through.",
+    ps3_solution: "Workflow automation in your systems",
+    ps3_solution_desc: "AI-powered flows that create tickets, send reminders, and update your systems for you.",
 
     // Why HiT3CH
-    why_kicker: "About & Why",
-    why_title: "Why HiT3CH",
+    why_title: "Why choose HiT3CH for AI automation",
+    why_intro: "A Swedish partner delivering AI solutions for business — from AI customer service to workflow automation.",
     why_intro: "We’re a Sweden‑based AI partner that designs, builds, and improves solutions around your real workflows. Tailored over templated. Compliance by default. Support during and after launch.",
 
     why_point1_title: "Tailored solutions",
@@ -191,27 +219,52 @@ export const translations = {
 
 
     // Process
-    process_title: "How We Work",
-    process_sub: "A proven method that keeps every project focused, transparent, and effective.",
-    process1_title: "Evaluate",
-    process1_text: "We start with your reality. Together we analyze your workflows, customer touchpoints, and goals. This ensures we solve the right problems with AI — not just add technology for its own sake.",
-    process2_title: "Build",
-    process2_text: "Tailored solutions, not templates. Based on the evaluation, we design and implement AI solutions adapted to your systems and ways of working — from voice and chat agents to workflow automation.",
-    process3_title: "Deliver",
-    process3_text: "Smooth onboarding, clear handover. We launch the solution with training and integration, ensuring your team feels confident from day one. Every delivery includes support during rollout.",
-    process4_title: "Monitor & Improve",
-    process4_text: "AI that grows with your business. We continuously track performance, gather feedback, and optimize the solution. As your needs evolve, we expand and refine the automation.",
+    process_title: "How we deliver AI automation",
+    process_sub: "A clear path from analysis to production.",
+    process1_title: "Audit of support & workflows",
+    process1_text: "Map pain points across customer service, marketing and internal processes.",
+    process2_title: "Prototype: AI chatbot/agent",
+    process2_text: "Rapid prototype with real data and clear success criteria.",
+    process3_title: "Implementation & integration",
+    process3_text: "Integrate with telephony, CRM and tools you already use.",
+    process4_title: "Optimization & reporting",
+    process4_text: "Track response time, CSAT and conversions — iterate for impact.",
+
+    // FAQ
+    faq_title: "Frequently asked questions (FAQ)",
+    faq_sub: "Quick answers about AI automation, AI customer support and chatbots.",
+
+    faq_q0: "What is HiT3CH?",
+    faq_a0: "HiT3CH is a Swedish provider of AI automation for businesses. We deliver AI customer support, AI chatbots, workflow automation and AI tools for marketing. As an AI automation consultant, we help both small and medium-sized companies improve efficiency in customer service and processes.",
+
+    faq_q1: "What is AI automation and how do we start?",
+    faq_a1: "AI automation uses models and rules to handle repetitive tasks in support, marketing and operations. We begin with a 30-minute call to define goals and propose a pilot.",
+
+    faq_q2: "Will AI customer service work with our CRM/telephony?",
+    faq_a2: "Yes — we integrate with common CRMs, helpdesks and telephony. We provide AI customer service software that connects securely to your stack.",
+
+    faq_q3: "How is an AI chatbot trained on our content?",
+    faq_a3: "We connect the bot to your knowledge base/FAQ and govern answers with policies and test cases. You approve before go-live.",
+
+    faq_q4: "How do we measure impact of AI solutions?",
+    faq_a4: "We track KPIs like response time, resolution rate, CSAT and cost per ticket, with regular reports and optimizations.",
+
+    faq_q5: "How much does an AI chatbot for customer service cost?",
+    faq_a5: "AI chatbot pricing depends on usage volume, languages and integrations. Typically a setup fee plus a monthly usage-based fee. Contact us for details on AI chatbot price.",
+
+    faq_q6: "Can we start small and scale later?",
+    faq_a6: "Absolutely. Start with a focused pilot (e.g., chat FAQ) and expand to more use cases as value is proven.",
+
 
     // Final CTA
-    consult_kicker: "Free Consultation",
-    consult_title: "Get a free consultation now",
-    consult_sub: "A focused 30-minute session to identify bottlenecks and explore how automation can deliver measurable improvements.",
+    consult_kicker: "Free AI consultation",
+    consult_title: "Get a free AI consultation",
+    consult_sub: "30 minutes to identify where AI automation delivers the most value.",
+    consult_b1: "Identify key challenges in support and workflows.",
+    consult_b2: "Concrete proposals for AI customer service, chatbots and automation.",
+    consult_b3: "Clear next steps — no obligation.",
+    consult_cta: "Book a free AI consultation",
 
-    consult_b1: "Identify key challenges – we map out your bottlenecks.",
-    consult_b2: "Get tailored suggestions – concrete ideas aligned with your goals.",
-    consult_b3: "Decide at your pace – clear next steps with no obligation.",
-
-    consult_cta: "Book free consultation",
     consult_side_title: "What you get",
     consult_side_sub: "A short, focused call with a clear plan.",
     consult_stat1_v: "2–4w",
@@ -233,6 +286,7 @@ export const translations = {
     form_success: "Thanks! We’ll get back to you soon.",
 
     // Footer
+    footer_contact: "Contact",
     footer_rights: "All rights reserved.",
 
     // Toggle label
@@ -247,6 +301,12 @@ export const translations = {
     solution2_title: "AI Marketing",
     solution2_text: "Automated lead gen and friendly outreach that feels human.",
     solution3_title: "AI Workflow Automation",
-    solution3_text: "Automate bookings, reminders, invoicing, and small time sinks."
+    solution3_text: "Automate bookings, reminders, invoicing, and small time sinks.",
+
+    // Privacy Policy
+    footer_privacy: "Privacy Policy",
+    privacy_title: "Privacy Policy",
+    privacy_intro_sv: "HiT3CH only processes the personal data you provide via our contact form or email. The data is used solely to respond to your inquiry and is stored for a maximum of 12 months.",
+    privacy_rights_sv: "You have the right to request access, correction, or deletion of your data. Contact us at alaa.hijazi@hit3ch.com."
   }
 };
