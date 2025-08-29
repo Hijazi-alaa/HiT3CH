@@ -72,8 +72,8 @@ const demoCopy = {
 function setConsultCopyExplicit() {
   const dict = translations[getLang()] || translations.sv;
   const titleEl = document.getElementById('consult-modal-title');
-  const subEl   = document.querySelector('[data-i18n="consult_modal_sub"]');
-  const msgLbl  = document.querySelector('label[for="message"]');
+  const subEl = document.querySelector('[data-i18n="consult_modal_sub"]');
+  const msgLbl = document.querySelector('label[for="message"]');
 
   if (titleEl) {
     titleEl.setAttribute('data-i18n', 'consult_modal_title');
@@ -93,8 +93,8 @@ function setDemoCopyExplicit() {
   const lang = getLang();
   const dc = demoCopy[lang] || demoCopy.sv;
   const titleEl = document.getElementById('consult-modal-title');
-  const subEl   = document.querySelector('[data-i18n="consult_modal_sub"], .consult-sub-frozen');
-  const msgLbl  = document.querySelector('label[for="message"]');
+  const subEl = document.querySelector('[data-i18n="consult_modal_sub"], .consult-sub-frozen');
+  const msgLbl = document.querySelector('label[for="message"]');
 
   if (titleEl) {
     titleEl.removeAttribute('data-i18n');
@@ -111,6 +111,7 @@ function setDemoCopyExplicit() {
   }
 }
 
+// If user changes language while modal with consult defaults is open, refresh to current lang
 function refreshConsultDefaultsIfOpen() {
   const modal = document.getElementById('contact-modal');
   if (!modal) return;
@@ -118,9 +119,47 @@ function refreshConsultDefaultsIfOpen() {
   if (!isOpen) return;
 
   const titleEl = document.getElementById('consult-modal-title');
-  const subEl   = document.querySelector('[data-i18n="consult_modal_sub"]');
-  const msgLbl  = document.querySelector('label[for="message"][data-i18n="form_message"]');
+  const subEl = document.querySelector('[data-i18n="consult_modal_sub"]');
+  const msgLbl = document.querySelector('label[for="message"][data-i18n="form_message"]');
   if (titleEl || subEl || msgLbl) setConsultCopyExplicit();
+}
+
+/* -------------- Mobile menu -------------- */
+function setupMobileMenu() {
+  const btn = document.getElementById('menu-toggle');
+  const panel = document.getElementById('mobile-menu');
+  if (!btn || !panel) return;
+
+  const open = () => {
+    panel.classList.remove('hidden');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-label', getLang() === 'sv' ? 'Stäng meny' : 'Close menu');
+    document.documentElement.style.overflow = 'hidden';
+  };
+  const close = () => {
+    panel.classList.add('hidden');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', getLang() === 'sv' ? 'Öppna meny' : 'Open menu');
+    document.documentElement.style.overflow = '';
+  };
+  const toggle = () => (panel.classList.contains('hidden') ? open() : close());
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    toggle();
+  });
+
+  panel.querySelectorAll('[data-scroll]').forEach(a => {
+    a.addEventListener('click', () => close());
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !panel.classList.contains('hidden')) close();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) close();
+  });
 }
 
 /* -------------- Contact modal -------------- */
@@ -128,11 +167,11 @@ function setupModal() {
   const modal = document.getElementById('contact-modal');
   if (!modal) return;
 
-  const openers  = document.querySelectorAll('[data-modal-open]');
+  const openers = document.querySelectorAll('[data-modal-open]');
   const closeBtn = document.getElementById('modal-close');
-  const form     = document.getElementById('contact-form');
-  const success  = document.getElementById('form-success');
-  const modalCard= document.getElementById('modal-card');
+  const form = document.getElementById('contact-form');
+  const success = document.getElementById('form-success');
+  const modalCard = document.getElementById('modal-card');
 
   let mode = 'consult'; // 'consult' | 'demo'
 
@@ -164,7 +203,7 @@ function setupModal() {
 
     modal.classList.remove('hidden');
     modal.setAttribute('aria-hidden', 'false');
-    modalCard?.classList.remove('translate-y-2','opacity-0');
+    modalCard?.classList.remove('translate-y-2', 'opacity-0');
     const first = focusables()[0]; first?.focus();
     document.addEventListener('keydown', trap);
   }
@@ -191,13 +230,13 @@ function setupModal() {
     el.classList.remove('hidden');
   };
   function clearErrors() {
-    ['err-name','err-company','err-email','err-message','form-error'].forEach(id => {
+    ['err-name', 'err-company', 'err-email', 'err-message', 'form-error'].forEach(id => {
       const el = document.getElementById(id);
       if (el) { el.textContent = ''; el.classList.add('hidden'); }
     });
-    ['name','company','email','message'].forEach(id => {
+    ['name', 'company', 'email', 'message'].forEach(id => {
       const inp = document.getElementById(id);
-      inp?.setAttribute('aria-invalid','false');
+      inp?.setAttribute('aria-invalid', 'false');
     });
   }
 
@@ -215,29 +254,29 @@ function setupModal() {
 
     let ok = true;
     if (!name.value.trim()) {
-      ok = false; showError('err-name', getLang()==='sv' ? 'Namn krävs.' : 'Name is required.'); name.setAttribute('aria-invalid','true');
+      ok = false; showError('err-name', getLang() === 'sv' ? 'Namn krävs.' : 'Name is required.'); name.setAttribute('aria-invalid', 'true');
     }
     if (!company.value.trim()) {
-      ok = false; showError('err-company', getLang()==='sv' ? 'Företag krävs.' : 'Company is required.'); company.setAttribute('aria-invalid','true');
+      ok = false; showError('err-company', getLang() === 'sv' ? 'Företag krävs.' : 'Company is required.'); company.setAttribute('aria-invalid', 'true');
     }
     const emailVal = email.value.trim();
     const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!emailVal) {
-      ok = false; showError('err-email', getLang()==='sv' ? 'E-post krävs.' : 'Email is required.'); email.setAttribute('aria-invalid','true');
+      ok = false; showError('err-email', getLang() === 'sv' ? 'E-post krävs.' : 'Email is required.'); email.setAttribute('aria-invalid', 'true');
     } else if (!emailRe.test(emailVal)) {
-      ok = false; showError('err-email', getLang()==='sv' ? 'Ange en giltig e-postadress.' : 'Enter a valid email address.'); email.setAttribute('aria-invalid','true');
+      ok = false; showError('err-email', getLang() === 'sv' ? 'Ange en giltig e-postadress.' : 'Enter a valid email address.'); email.setAttribute('aria-invalid', 'true');
     }
     if (!ok) { (document.querySelector('[aria-invalid="true"]'))?.focus(); return; }
 
     const fd = new FormData(form);
     fd.append('request_type', mode);
     if (!message.value.trim() && mode === 'demo') {
-      fd.set('message', getLang()==='sv' ? 'Intresserad av en demo.' : 'Interested in a demo.');
+      fd.set('message', getLang() === 'sv' ? 'Intresserad av en demo.' : 'Interested in a demo.');
     }
 
     const FORMSPREE_ID = 'mwpnezzr';
     submitBtn.disabled = true;
-    submitBtn.classList.add('opacity-60','cursor-not-allowed');
+    submitBtn.classList.add('opacity-60', 'cursor-not-allowed');
 
     try {
       const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
@@ -251,10 +290,10 @@ function setupModal() {
         const dict = translations[lang] || translations.sv;
 
         const titleEl = document.getElementById('consult-modal-title');
-        const subEl   = document.querySelector('.consult-sub-frozen') || document.querySelector('[data-i18n="consult_modal_sub"]');
+        const subEl = document.querySelector('.consult-sub-frozen') || document.querySelector('[data-i18n="consult_modal_sub"]');
 
-        if (titleEl) { titleEl.removeAttribute('data-i18n'); titleEl.textContent = dict.consult_success_title || (lang==='sv' ? 'Tack — din förfrågan är skickad' : 'Thanks — your request was sent'); }
-        if (subEl)   { subEl.removeAttribute('data-i18n');   subEl.textContent   = dict.consult_success_sub   || (lang==='sv' ? 'Vi återkommer inom 1 arbetsdag.' : 'We’ll get back within 1 business day.'); }
+        if (titleEl) { titleEl.removeAttribute('data-i18n'); titleEl.textContent = dict.consult_success_title || (lang === 'sv' ? 'Tack — din förfrågan är skickad' : 'Thanks — your request was sent'); }
+        if (subEl) { subEl.removeAttribute('data-i18n'); subEl.textContent = dict.consult_success_sub || (lang === 'sv' ? 'Vi återkommer inom 1 arbetsdag.' : 'We’ll get back within 1 business day.'); }
 
         form.classList.add('hidden');
         success?.classList.remove('hidden');
@@ -262,16 +301,16 @@ function setupModal() {
         document.getElementById('modal-close')?.focus();
       } else {
         const fe = document.getElementById('form-error');
-        fe.textContent = getLang()==='sv' ? 'Kunde inte skicka. Försök igen.' : 'Submit failed. Please try again.';
+        fe.textContent = getLang() === 'sv' ? 'Kunde inte skicka. Försök igen.' : 'Submit failed. Please try again.';
         fe.classList.remove('hidden');
       }
     } catch {
       const fe = document.getElementById('form-error');
-      fe.textContent = getLang()==='sv' ? 'Nätverksfel. Försök igen.' : 'Network error. Please try again.';
+      fe.textContent = getLang() === 'sv' ? 'Nätverksfel. Försök igen.' : 'Network error. Please try again.';
       fe.classList.remove('hidden');
     } finally {
       submitBtn.disabled = false;
-      submitBtn.classList.remove('opacity-60','cursor-not-allowed');
+      submitBtn.classList.remove('opacity-60', 'cursor-not-allowed');
     }
   });
 
@@ -286,18 +325,18 @@ function setupModal() {
   });
 }
 
-/* -------------- Smooth scroll (header-aware) -------------- */
+// Smooth scroll (desktop + mobile nav)
 function setupSmoothScroll() {
-  const navLinks = Array.from(document.querySelectorAll('header [data-scroll]'));
+  const navLinks = Array.from(document.querySelectorAll('header [data-scroll], #mobile-menu [data-scroll]'));
   if (!navLinks.length) return;
 
   const header = document.querySelector('header');
   const headerH = () => (header?.offsetHeight || 0);
 
   function setActiveLinkBySelector(sel) {
-    navLinks.forEach(a => a.classList.remove('text-cyan-400','border-cyan-400'));
-    const hit = navLinks.find(a => a.getAttribute('data-scroll') === sel);
-    if (hit) hit.classList.add('text-cyan-400','border-cyan-400');
+    navLinks.forEach(a => a.classList.remove('text-cyan-400', 'border-cyan-400'));
+    document.querySelectorAll(`header [data-scroll="${sel}"], #mobile-menu [data-scroll="${sel}"]`)
+      .forEach(a => a.classList.add('text-cyan-400', 'border-cyan-400'));
   }
 
   navLinks.forEach(a => {
@@ -320,22 +359,29 @@ function setupSmoothScroll() {
         window.removeEventListener('scroll', onScrollCheck, { passive: true });
         window.dispatchEvent(new Event('scroll'));
       };
-      const onScrollCheck = () => {
-        if (Math.abs(window.pageYOffset - targetY) < 2) done();
-      };
+      const onScrollCheck = () => { if (Math.abs(window.pageYOffset - targetY) < 2) done(); };
       window.addEventListener('scroll', onScrollCheck, { passive: true });
       setTimeout(() => { if (window.__manualNav) done(); }, 2000);
     });
   });
 }
 
-/* -------------- Scroll spy -------------- */
+// Scroll spy (updates BOTH desktop + mobile links)
 function setupScrollSpy() {
-  const links = Array.from(document.querySelectorAll('header [data-scroll]'));
-  if (!links.length) return;
+  const allLinks = () => Array.from(document.querySelectorAll('header [data-scroll], #mobile-menu [data-scroll]'));
+  if (!allLinks().length) return;
 
-  const map = new Map();
-  links.forEach(a => map.set(a.getAttribute('data-scroll'), a));
+  // Map "#id" -> [<a>, <a>...] (desktop + mobile)
+  const groups = new Map();
+  const rebuildGroups = () => {
+    groups.clear();
+    allLinks().forEach(a => {
+      const key = a.getAttribute('data-scroll');
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(a);
+    });
+  };
+  rebuildGroups();
 
   const sections = [
     '#problems-solutions',
@@ -348,11 +394,10 @@ function setupScrollSpy() {
   const header = document.querySelector('header');
   const headerH = () => (header?.offsetHeight || 0);
 
-  const clearActive = () => links.forEach(a => a.classList.remove('text-cyan-400','border-cyan-400'));
-  const setActiveId = (id) => {
+  const clearActive = () => allLinks().forEach(a => a.classList.remove('text-cyan-400', 'border-cyan-400'));
+  const setActiveSel = (sel) => {
     clearActive();
-    const link = map.get(`#${id}`);
-    if (link) link.classList.add('text-cyan-400','border-cyan-400');
+    (groups.get(`#${sel}`) || []).forEach(a => a.classList.add('text-cyan-400', 'border-cyan-400'));
   };
 
   function updateActive() {
@@ -365,7 +410,7 @@ function setupScrollSpy() {
     const maxScroll = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
     const nearBottom = maxScroll - docBottom < 40;
 
-    if (nearBottom) { setActiveId(sections[sections.length - 1].id); return; }
+    if (nearBottom) { setActiveSel(sections[sections.length - 1].id); return; }
 
     let winner = sections[0];
     for (const s of sections) {
@@ -373,7 +418,7 @@ function setupScrollSpy() {
       if (r.top <= y && r.bottom > y) { winner = s; break; }
       if (Math.abs(r.top - y) < Math.abs(winner.getBoundingClientRect().top - y)) winner = s;
     }
-    setActiveId(winner.id);
+    setActiveSel(winner.id);
   }
 
   let ticking = false;
@@ -383,12 +428,18 @@ function setupScrollSpy() {
       ticking = true;
     }
   }
+
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
+  window.addEventListener('resize', () => { rebuildGroups(); onScroll(); });
   document.addEventListener('lang-changed', onScroll);
+
+  // In case mobile menu is injected later
+  const obs = new MutationObserver(() => { rebuildGroups(); });
+  obs.observe(document.body, { childList: true, subtree: true });
 
   updateActive();
 }
+
 
 /* -------------- FAQ Accordion (Option 1) -------------- */
 /* HTML expectation per item:
@@ -520,9 +571,9 @@ function setupCookieBanner() {
 
 /* -------------- Privacy modal (footer trigger) -------------- */
 function setupPrivacyModal() {
-  const modal   = document.getElementById('privacy-modal');
+  const modal = document.getElementById('privacy-modal');
   const openBtn = document.getElementById('privacy-open');
-  const closeBtn= document.getElementById('privacy-close');
+  const closeBtn = document.getElementById('privacy-close');
 
   if (!modal || !openBtn || !closeBtn) return;
 
@@ -553,4 +604,5 @@ document.addEventListener('DOMContentLoaded', () => {
   setupFAQAccordion();
   setupCookieBanner();
   setupPrivacyModal();
+  setupMobileMenu();
 });
