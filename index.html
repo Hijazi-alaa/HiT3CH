@@ -3,24 +3,85 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-    content="Vi hjälper svenska bolag att effektivisera kundsupport, marknadsföring och arbetsflöden med AI." />
-  <title data-i18n="meta_title">HiT3CH – Lås upp effektiviteten med AI</title>
+    content="AI-automation som minskar kostnader och ökar kundnöjdhet. AI-kundsupport, AI-chattbotar och arbetsflödesautomation för svenska företag. Boka gratis AI-konsultation." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b1220" />
+
+  <title data-i18n="meta_title">AI-automation för företag | HiT3CH</title>
+
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-  <meta property="og:title" content="HiT3CH" />
-  <meta property="og:description" content="AI-automation för riktiga företag" />
-  <meta property="og:image" content="assets/img/og-image.jpg" />
+  <link id="canonical" rel="canonical" href="https://hit3ch.se/" />
+  <link id="alt-sv" rel="alternate" href="https://hit3ch.se/?lang=sv" hreflang="sv" />
+  <link id="alt-en" rel="alternate" href="https://hit3ch.se/?lang=en" hreflang="en" />
+  <link rel="alternate" href="https://hit3ch.se/" hreflang="x-default" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hit3ch.se/" />
+  <meta property="og:site_name" content="HiT3CH" />
+  <meta property="og:title" content="AI-automation för företag | HiT3CH" />
+  <meta property="og:description"
+    content="AI-automation som minskar kostnader och ökar kundnöjdhet. AI-kundsupport, AI-chattbotar och arbetsflödesautomation för svenska företag. Boka gratis AI-konsultation." />
+  <meta property="og:image" content="https://hit3ch.se/assets/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="HiT3CH – Lås upp effektiviteten med AI" />
+  <meta property="og:locale" content="sv_SE" />
+
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@hit3ch" />
+  <meta name="twitter:creator" content="@hit3ch" />
+  <meta name="twitter:title" content="AI-automation för företag | HiT3CH" />
+  <meta name="twitter:description"
+    content="AI-automation som minskar kostnader och ökar kundnöjdhet. AI-kundsupport, AI-chattbotar och arbetsflödesautomation för svenska företag. Boka gratis AI-konsultation." />
+  <meta name="twitter:image" content="https://hit3ch.se/assets/img/og-image.jpg" />
+  <meta name="twitter:image:alt" content="HiT3CH – Lås upp effektiviteten med AI" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "AI automation services",
+  "provider": {
+    "@type": "Organization",
+    "name": "HiT3CH",
+    "url": "https://hit3ch.se/",
+    "logo": "https://hit3ch.se/assets/img/logo.png"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Sweden"
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://hit3ch.se/#contact",
+    "availableLanguage": ["sv","en"]
+  }
+}
+</script>
+
+
+
+  <!-- Performance: fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://kit.fontawesome.com/a7cfe14bd2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: { sans: ['Inter', 'sans-serif'] },
           keyframes: {
+            // Badge pulse wave effect
             pulseWave: {
               '0%': { opacity: .6, boxShadow: '0 0 0 0 rgba(0,0,0,0)', transform: 'scale(1)' },
               '20%': { opacity: 1, boxShadow: '0 0 24px 6px currentColor', transform: 'scale(1.06)' },
@@ -28,24 +89,14 @@
               '60%': { opacity: .7, boxShadow: '0 0 8px 2px currentColor', transform: 'scale(1.01)' },
               '100%': { opacity: .6, boxShadow: '0 0 0 0 rgba(0,0,0,0)', transform: 'scale(1)' }
             },
-            /* new ones used in Why/Process sections */
-            shimmerX: {
-              '0%': { backgroundPosition: '0% 50%' },
-              '100%': { backgroundPosition: '200% 50%' }
-            },
-            floatY: {
-              '0%,100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-4px)' }
-            },
+            shimmerX: { '0%': { backgroundPosition: '0% 50%' }, '100%': { backgroundPosition: '200% 50%' } },
+            floatY: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-4px)' } },
             pulseRing: {
               '0%': { boxShadow: '0 0 0 0 rgba(34,211,238,.35)' },
               '70%': { boxShadow: '0 0 24px 6px rgba(34,211,238,0)' },
               '100%': { boxShadow: '0 0 0 0 rgba(34,211,238,0)' }
             },
-            fadeUp: {
-              from: { opacity: 0, transform: 'translateY(12px)' },
-              to: { opacity: 1, transform: 'translateY(0)' }
-            }
+            fadeUp: { from: { opacity: 0, transform: 'translateY(12px)' }, to: { opacity: 1, transform: 'translateY(0)' } }
           },
           animation: {
             pulseWave: 'pulseWave 4s ease-in-out infinite',
@@ -58,504 +109,766 @@
       }
     }
   </script>
-
-
 </head>
 
-<body class="font-sans bg-slate-950 text-slate-100 pt-20">
+<body class="font-sans bg-slate-950 text-slate-100 pt-20 motion-reduce:animate-none">
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2
+     focus:bg-cyan-600 focus:text-white focus:px-3 focus:py-2 focus:rounded">Hoppa till innehåll</a>
+
   <!-- Header -->
   <header class="fixed top-0 inset-x-0 z-50 bg-slate-950/60 backdrop-blur border-b border-slate-800/50">
     <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="#top" class="flex items-center gap-2 text-slate-100 no-underline">
-        <img src="/assets/img/logo.png" alt="HiT3CH" width="50" height="50" decoding="async">
+        <img src="/assets/img/logo.png" alt="HiT3CH logotyp" width="50" height="50" decoding="async"
+          fetchpriority="high">
         <strong>HiT3CH</strong>
       </a>
-      <nav class="flex items-center gap-4">
-        <a class="text-slate-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 rounded"
-          href="#problems-solutions" data-scroll="#problems-solutions" data-i18n="nav_solutions"></a>
 
-        <a class="text-slate-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 rounded"
-          href="#why-hit3ch" data-scroll="#why-hit3ch" data-i18n="nav_about"></a>
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-4" aria-label="Primär">
+        <a class="text-slate-300 hover:text-cyan-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 rounded border-b border-transparent"
+          href="#problems-solutions" data-scroll="#problems-solutions" data-i18n="nav_solutions">Lösningar</a>
+        <a class="text-slate-300 hover:text-cyan-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 rounded border-b border-transparent"
+          href="#why-hit3ch" data-scroll="#why-hit3ch" data-i18n="nav_about">Om oss</a>
+        <a class="text-slate-300 hover:text-cyan-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 rounded border-b border-transparent"
+          href="#process" data-scroll="#process" data-i18n="nav_process">Process</a>
+        <a class="text-slate-300 hover:text-cyan-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 rounded border-b border-transparent"
+          href="#faq" data-scroll="#faq" data-i18n="nav_faq">FAQ</a>
+        <a class="text-slate-300 hover:text-cyan-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 rounded border-b border-transparent"
+          href="#contact" data-scroll="#contact" data-i18n="nav_contact">Kontakt</a>
 
-        <a class="text-slate-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 rounded"
-          href="#process" data-scroll="#process" data-i18n="nav_process"></a>
-
-        <button id="lang-toggle" aria-label="Byt språk" class="inline-flex items-center gap-2 rounded-xl border border-slate-700/80 px-3 py-2 text-slate-100 hover:border-slate-500
-           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">Svenska</button>
+        <!-- Lang (desktop) -->
+        <button id="lang-toggle" aria-label="Byt språk"
+          class="relative inline-flex items-center gap-1.5 rounded-full bg-slate-800/70 px-3 py-1.5 text-xs text-slate-300 hover:bg-slate-700 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 transition border border-slate-600 hover:border-cyan-400 hover:shadow-[0_0_12px_rgba(34,211,238,0.8)]">
+          <i class="fa-solid fa-globe text-cyan-400" aria-hidden="true"></i>
+          <span>EN</span>
+        </button>
       </nav>
+
+      <!-- Mobile: burger + lang -->
+      <div class="md:hidden flex items-center gap-2">
+        <button id="lang-toggle" aria-label="Byt språk"
+          class="inline-flex items-center gap-1.5 rounded-full bg-slate-800/70 px-3 py-1.5 text-xs text-slate-300 hover:bg-slate-700 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 transition border border-slate-600 hover:border-cyan-400">
+          <i class="fa-solid fa-globe text-cyan-400" aria-hidden="true"></i>
+          <span>EN</span>
+        </button>
+
+        <button id="menu-toggle"
+          class="inline-flex items-center justify-center rounded-md p-2 text-slate-300 hover:text-white hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 border border-slate-700"
+          aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-menu">
+          <i class="fa-solid fa-bars text-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu panel -->
+    <div id="mobile-menu" class="md:hidden hidden">
+      <div class="px-6 pb-4 pt-2 border-t border-slate-800 bg-slate-950/95 backdrop-blur">
+        <nav class="grid gap-2" aria-label="Mobil">
+          <a class="block px-3 py-2 rounded border-b border-transparent text-slate-200 hover:text-cyan-400 hover:bg-slate-800/60"
+            href="#problems-solutions" data-scroll="#problems-solutions" data-i18n="nav_solutions">Lösningar</a>
+          <a class="block px-3 py-2 rounded border-b border-transparent text-slate-200 hover:text-cyan-400 hover:bg-slate-800/60"
+            href="#why-hit3ch" data-scroll="#why-hit3ch" data-i18n="nav_about">Om oss</a>
+          <a class="block px-3 py-2 rounded border-b border-transparent text-slate-200 hover:text-cyan-400 hover:bg-slate-800/60"
+            href="#process" data-scroll="#process" data-i18n="nav_process">Process</a>
+          <a class="block px-3 py-2 rounded border-b border-transparent text-slate-200 hover:text-cyan-400 hover:bg-slate-800/60"
+            href="#faq" data-scroll="#faq" data-i18n="nav_faq">FAQ</a>
+          <a class="block px-3 py-2 rounded border-b border-transparent text-slate-200 hover:text-cyan-400 hover:bg-slate-800/60"
+            href="#contact" data-scroll="#contact" data-i18n="nav_contact">Kontakt</a>
+        </nav>
+      </div>
     </div>
   </header>
 
 
-
-  <!-- Hero -->
-  <section class="relative isolate">
-    <div
-      class="absolute inset-0 -z-10 bg-slate-950
-              [background:radial-gradient(600px_300px_at_0%_0%,rgba(34,211,238,.18),transparent_60%),radial-gradient(800px_400px_at_100%_10%,rgba(79,70,229,.22),transparent_60%)]">
-    </div>
-
-    <div class="max-w-screen-xl mx-auto px-6 py-24">
-      <span class="inline-block rounded-full border border-slate-600/60 px-3 py-1 text-xs font-semibold text-slate-300"
-        data-i18n="hero_pill"></span>
-
-      <h1 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-100" data-i18n="hero_title"></h1>
-
-      <p class="mt-3 max-w-2xl text-base md:text-lg text-slate-300" data-i18n="hero_sub"></p>
-
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a class="inline-flex items-center rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-400 px-5 py-3 font-semibold text-white
-                hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
-          href="#contact" data-modal-open data-i18n="cta_primary"></a>
-
-        <a class="inline-flex items-center rounded-xl border border-slate-700/80 px-5 py-3 font-semibold text-slate-100
-                hover:border-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
-          href="#problems-solutions" data-scroll="#problems-solutions" data-i18n="cta_secondary"></a>
+  <main id="main">
+    <!-- Hero -->
+    <section class="relative isolate py-24 md:py-28">
+      <div
+        class="absolute inset-0 -z-10 bg-slate-950
+        [background:radial-gradient(600px_300px_at_0%_0%,rgba(34,211,238,.18),transparent_60%),radial-gradient(800px_400px_at_100%_10%,rgba(79,70,229,.22),transparent_60%)]">
       </div>
-    </div>
-  </section>
 
+      <div class="max-w-screen-xl mx-auto px-6">
+        <span
+          class="inline-block rounded-full border border-slate-600/60 px-3 py-1 text-xs font-semibold text-slate-300"
+          data-i18n="hero_pill">Lås upp effektiviteten med AI</span>
 
+        <h1 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-100" data-i18n="hero_title">
+          AI-automation: kundsupport, chattbotar & arbetsflöden
+        </h1>
 
-  <!-- Problem → Solutions (paired rows) -->
-  <section id="problems-solutions" class="max-w-screen-xl mx-auto px-6 py-16">
-    <div class="text-center max-w-2xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold" data-i18n="problem_solution_title"></h2>
-    </div>
-    <div class="mx-auto mt-3 h-[3px] w-40 rounded-full
-                  bg-gradient-to-r from-cyan-400 via-indigo-400 to-cyan-400
-                  bg-[length:200%_3px] animate-shimmerX"></div>
-    <div class="mt-10 space-y-8">
-      <!-- Row 1 -->
-      <div class="grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
-        <article class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6 backdrop-blur">
-          <div
-            class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-500/10 text-sky-400 ring-1 ring-sky-500/20">
-            <i class="fa-solid fa-phone-volume text-sky-400 text-lg"></i>
-          </div>
-          <h3 class="mt-4 font-semibold" data-i18n="ps1_problem"></h3>
-        </article>
+        <p class="mt-3 max-w-2xl text-base md:text-lg text-slate-300" data-i18n="hero_sub">
+          Automatisering med AI för småföretag och B2B – AI-kundtjänst, AI-verktyg för marknadsföring och
+          workflow-automation som ger mätbara resultat.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <button
+            class="inline-flex items-center rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-400 px-5 py-3 font-semibold text-white
+                         hover:scale-105 active:shadow-[0_0_12px_rgba(34,211,238,0.8)]
+                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 transition-transform"
+            data-modal-open data-i18n="cta_primary">Boka demo</button>
 
-        <div class="relative hidden md:flex items-center justify-center">
-          <i class="fa-solid fa-arrow-right text-slate-500 text-xl"></i>
+          <a class="inline-flex items-center rounded-xl border border-slate-700/80 px-5 py-3 font-semibold text-slate-100
+                    hover:border-cyan-400 hover:text-cyan-400 hover:scale-105 active:shadow-[0_0_12px_rgba(34,211,238,0.8)]
+                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 transition-transform"
+            href="#problems-solutions" data-scroll="#problems-solutions" data-i18n="cta_secondary">Se lösningar</a>
         </div>
+      </div>
+    </section>
 
-        <article class="rounded-2xl border border-emerald-800/50 bg-emerald-900/20 p-6">
-          <div
-            class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20">
-            <i class="fa-solid fa-headset text-emerald-400 text-lg"></i>
-          </div>
-          <h3 class="mt-4 font-semibold" data-i18n="ps1_solution"></h3>
-          <p class="mt-1 text-slate-200" data-i18n="ps1_solution_desc"></p>
-        </article>
+    <!-- Problem → Solutions -->
+    <section id="problems-solutions" class="scroll-mt-24 md:scroll-mt-28 max-w-screen-xl mx-auto px-6 py-16 md:py-20">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold" data-i18n="problem_solution_title">Från tidstjuvar till effektivitet
+        </h2>
+      </div>
+      <div
+        class="mx-auto mt-3 h-[3px] w-40 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-400 to-cyan-400 bg-[length:200%_3px] animate-shimmerX motion-reduce:animate-none">
       </div>
 
-      <!-- Row 2 -->
-      <div class="grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
-        <article class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6 backdrop-blur">
-          <div
-            class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-500/10 text-sky-400 ring-1 ring-sky-500/20">
-            <i class="fa-solid fa-magnifying-glass-dollar"></i>
-          </div>
-          <h3 class="mt-4 font-semibold" data-i18n="ps2_problem"></h3>
-        </article>
-        <div class="relative hidden md:flex items-center justify-center">
-          <i class="fa-solid fa-arrow-right text-slate-500 text-xl"></i>
-        </div>
-
-        <article class="rounded-2xl border border-emerald-800/50 bg-emerald-900/20 p-6">
-          <div
-            class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M7 14l3-3 4 4 5-6" />
-            </svg>
-
-          </div>
-          <h3 class="mt-4 font-semibold" data-i18n="ps2_solution"></h3>
-          <p class="mt-1 text-slate-200" data-i18n="ps2_solution_desc"></p>
-        </article>
-      </div>
-
-      <!-- Row 3 -->
-      <div class="grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
-        <article class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6 backdrop-blur">
-          <div
-            class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-500/10 text-sky-400 ring-1 ring-sky-500/20">
+      <div class="mt-10 space-y-8">
+        <!-- Row 1 -->
+        <div class="grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
+          <article
+            class="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur hover:border-slate-700/80 hover:bg-slate-900/70 transition">
             <div
-              class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-500/10 text-sky-400 ring-1 ring-sky-500/20">
-              <div
-                class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-500/10 text-sky-400 ring-1 ring-sky-500/20">
-                <i class="fa-solid fa-file-invoice"></i>
-              </div>
+              class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-500/10 text-sky-400 ring-1 ring-sky-500/20"
+              aria-hidden="true">
+              <i class="fa-solid fa-phone-volume text-lg"></i>
             </div>
-          </div>
-          <h3 class="mt-4 font-semibold" data-i18n="ps3_problem"></h3>
-        </article>
+            <h3 class="mt-4 font-semibold" data-i18n="ps1_problem">Telefonen ringer konstant — kunder väntar, och
+              personalen fastnar i bokningar och vidarekopplingar.</h3>
+          </article>
 
-        <div class="relative hidden md:flex items-center justify-center">
-          <i class="fa-solid fa-arrow-right text-slate-500 text-xl"></i>
+          <div class="relative hidden md:flex items-center justify-center" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right text-slate-500 text-xl"></i>
+          </div>
+
+          <article
+            class="rounded-2xl border border-emerald-800/50 bg-emerald-900/20 p-6 hover:border-emerald-700/60 transition">
+            <div
+              class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20"
+              aria-hidden="true">
+              <i class="fa-solid fa-headset text-lg"></i>
+            </div>
+            <h3 class="mt-4 font-semibold" data-i18n="ps1_solution">AI-agent som svarar, bokar och kopplar vidare 24/7.
+            </h3>
+            <p class="mt-1 text-slate-200" data-i18n="ps1_solution_desc">AI-chattbot/voicebot som hanterar vanliga
+              frågor och bokningar med mänsklig eskalering.</p>
+          </article>
         </div>
 
-        <article class="rounded-2xl border border-emerald-800/50 bg-emerald-900/20 p-6">
-          <div
-            class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20">
+        <!-- Row 2 -->
+        <div class="grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
+          <article
+            class="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur hover:border-slate-700/80 hover:bg-slate-900/70 transition">
             <div
-              class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20">
+              class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-500/10 text-sky-400 ring-1 ring-sky-500/20"
+              aria-hidden="true">
+              <i class="fa-solid fa-magnifying-glass-dollar"></i>
+            </div>
+            <h3 class="mt-4 font-semibold" data-i18n="ps2_problem">B2B-pipen stannar — prospektering och uppföljning tar
+              tid.</h3>
+          </article>
+
+          <div class="relative hidden md:flex items-center justify-center" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right text-slate-500 text-xl"></i>
+          </div>
+
+          <article
+            class="rounded-2xl border border-emerald-800/50 bg-emerald-900/20 p-6 hover:border-emerald-700/60 transition">
+            <div
+              class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20"
+              aria-hidden="true">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 14l3-3 4 4 5-6" />
+              </svg>
+            </div>
+            <h3 class="mt-4 font-semibold" data-i18n="ps2_solution">AI-verktyg för marknadsföring och outreach</h3>
+            <p class="mt-1 text-slate-200" data-i18n="ps2_solution_desc">Automatiserad prospektering, personaliserade
+              mejl och mötesbokning med godkännande.</p>
+          </article>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
+          <article
+            class="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur hover:border-slate-700/80 hover:bg-slate-900/70 transition">
+            <div
+              class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-500/10 text-sky-400 ring-1 ring-sky-500/20"
+              aria-hidden="true">
+              <i class="fa-solid fa-file-invoice"></i>
+            </div>
+            <h3 class="mt-4 font-semibold" data-i18n="ps3_problem">Pappersarbete och uppföljning tar tid — bokningar,
+              fakturor och påminnelser glider isär.</h3>
+          </article>
+
+          <div class="relative hidden md:flex items-center justify-center" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right text-slate-500 text-xl"></i>
+          </div>
+
+          <article
+            class="rounded-2xl border border-emerald-800/50 bg-emerald-900/20 p-6 hover:border-emerald-700/60 transition">
+            <div
+              class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20"
+              aria-hidden="true">
               <i class="fa-solid fa-diagram-project"></i>
             </div>
+            <h3 class="mt-4 font-semibold" data-i18n="ps3_solution">Workflow-automation triggat av e-post, formulär
+              eller CRM.</h3>
+            <p class="mt-1 text-slate-200" data-i18n="ps3_solution_desc">Automatiska flöden som skapar ärenden, skickar
+              påminnelser och uppdaterar systemen åt dig.</p>
+          </article>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
+          <article
+            class="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur hover:border-slate-700/80 hover:bg-slate-900/70 transition">
+            <div
+              class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-500/10 text-sky-400 ring-1 ring-sky-500/20"
+              aria-hidden="true">
+              <i class="fa-solid fa-microphone-lines"></i>
+            </div>
+            <h3 class="mt-4 font-semibold" data-i18n="ps4_problem">
+              Möten tar tid — anteckningar missas och uppföljning försvinner.
+            </h3>
+          </article>
+
+          <div class="relative hidden md:flex items-center justify-center" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right text-slate-500 text-xl"></i>
           </div>
-          <h3 class="mt-4 font-semibold" data-i18n="ps3_solution"></h3>
-          <p class="mt-1 text-slate-200" data-i18n="ps3_solution_desc"></p>
-        </article>
-      </div>
-    </div>
-  </section>
 
-  <!-- Why HiT3CH -->
-  <section id="why-hit3ch" class="py-16">
-    <div class="max-w-screen-xl mx-auto px-6">
-      <!-- Title + animated underline -->
-      <header class="text-center max-w-3xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold" data-i18n="why_title"></h2>
-        <div class="mx-auto mt-3 h-[3px] w-40 rounded-full
-                  bg-gradient-to-r from-cyan-400 via-indigo-400 to-cyan-400
-                  bg-[length:200%_3px] animate-shimmerX"></div>
-        <p class="mt-4 text-slate-400" data-i18n="why_intro"></p>
-      </header>
-
-      <!-- Highlights with animated gradient borders + floating icons -->
-      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <!-- Card -->
-        <article class="group relative rounded-xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur">
-          <div class="pointer-events-none absolute inset-0 -z-10 rounded-xl
-                    before:content-[''] before:absolute before:inset-0 before:rounded-xl
-                    before:bg-[linear-gradient(110deg,rgba(34,211,238,.35),rgba(99,102,241,.35),rgba(34,211,238,.35))]
-                    before:bg-[length:200%_200%] before:opacity-0 group-hover:before:opacity-100
-                    before:animate-shimmerX transition-opacity"></div>
-          <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl
-                     bg-cyan-500/10 text-cyan-400 ring-1 ring-cyan-500/20
-                     animate-floatY">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-          </span>
-          <h3 class="mt-3 font-semibold" data-i18n="why_point1_title"></h3>
-          <p class="text-slate-400 text-sm" data-i18n="why_point1_text"></p>
-        </article>
-
-        <article class="group relative rounded-xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur">
-          <div class="pointer-events-none absolute inset-0 -z-10 rounded-xl
-                    before:content-[''] before:absolute before:inset-0 before:rounded-xl
-                    before:bg-[linear-gradient(110deg,rgba(34,211,238,.35),rgba(99,102,241,.35),rgba(34,211,238,.35))]
-                    before:bg-[length:200%_200%] before:opacity-0 group-hover:before:opacity-100
-                    before:animate-shimmerX transition-opacity"></div>
-          <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl
-                     bg-indigo-500/10 text-indigo-400 ring-1 ring-indigo-500/20
-                     animate-floatY [animation-delay:.2s]">
-            <i class="fa-solid fa-handshake"></i>
-          </span>
-          <h3 class="mt-3 font-semibold" data-i18n="why_point2_title"></h3>
-          <p class="text-slate-400 text-sm" data-i18n="why_point2_text"></p>
-        </article>
-
-        <article class="group relative rounded-xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur">
-          <div class="pointer-events-none absolute inset-0 -z-10 rounded-xl
-                    before:content-[''] before:absolute before:inset-0 before:rounded-xl
-                    before:bg-[linear-gradient(110deg,rgba(34,211,238,.35),rgba(99,102,241,.35),rgba(34,211,238,.35))]
-                    before:bg-[length:200%_200%] before:opacity-0 group-hover:before:opacity-100
-                    before:animate-shimmerX transition-opacity"></div>
-          <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl
-                     bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20
-                     animate-floatY [animation-delay:.4s]">
-            <i class="fa-solid fa-shield-halved"></i>
-          </span>
-          <h3 class="mt-3 font-semibold" data-i18n="why_point3_title"></h3>
-          <p class="text-slate-400 text-sm" data-i18n="why_point3_text"></p>
-        </article>
-
-        <article class="group relative rounded-xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur">
-          <div class="pointer-events-none absolute inset-0 -z-10 rounded-xl
-                    before:content-[''] before:absolute before:inset-0 before:rounded-xl
-                    before:bg-[linear-gradient(110deg,rgba(34,211,238,.35),rgba(99,102,241,.35),rgba(34,211,238,.35))]
-                    before:bg-[length:200%_200%] before:opacity-0 group-hover:before:opacity-100
-                    before:animate-shimmerX transition-opacity"></div>
-          <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl
-                     bg-sky-500/10 text-sky-400 ring-1 ring-sky-500/20
-                     animate-floatY [animation-delay:.6s]">
-            <i class="fa-solid fa-globe"></i>
-          </span>
-          <h3 class="mt-3 font-semibold" data-i18n="why_point4_title"></h3>
-          <p class="text-slate-400 text-sm" data-i18n="why_point4_text"></p>
-        </article>
-      </div>
-
-      <!-- Stats ribbon with soft glow pulses -->
-      <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="rounded-xl border border-slate-800/70 bg-slate-900/40 p-4 text-center animate-pulseRing">
-          <div class="text-2xl font-bold text-slate-100" data-i18n="why_stat1_value"></div>
-          <div class="text-sm text-slate-400" data-i18n="why_stat1_label"></div>
-        </div>
-        <div
-          class="rounded-xl border border-slate-800/70 bg-slate-900/40 p-4 text-center animate-pulseRing [animation-delay:.3s]">
-          <div class="text-2xl font-bold text-slate-100" data-i18n="why_stat2_value"></div>
-          <div class="text-sm text-slate-400" data-i18n="why_stat2_label"></div>
-        </div>
-        <div
-          class="rounded-xl border border-slate-800/70 bg-slate-900/40 p-4 text-center animate-pulseRing [animation-delay:.6s]">
-          <div class="text-2xl font-bold text-slate-100" data-i18n="why_stat3_value"></div>
-          <div class="text-sm text-slate-400" data-i18n="why_stat3_label"></div>
-        </div>
-        <div
-          class="rounded-xl border border-slate-800/70 bg-slate-900/40 p-4 text-center animate-pulseRing [animation-delay:.9s]">
-          <div class="text-2xl font-bold text-slate-100" data-i18n="why_stat4_value"></div>
-          <div class="text-sm text-slate-400" data-i18n="why_stat4_label"></div>
-        </div>
-      </div>
-
-      <p class="mt-4 text-center text-xs text-slate-500" data-i18n="why_note"></p>
-    </div>
-  </section>
-
-  <!-- Process (vertical zig‑zag, numbered badges + gradient spine) -->
-  <section id="process" class="py-20">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold" data-i18n="process_title"></h2>
-        <p class="mt-2 text-slate-400" data-i18n="process_sub"></p>
-      </div>
-      <div class="mx-auto mt-3 h-[3px] w-40 rounded-full
-                  bg-gradient-to-r from-cyan-400 via-indigo-400 to-cyan-400
-                  bg-[length:200%_3px] animate-shimmerX"></div>
-
-      <div class="relative mt-12">
-        <!-- gradient spine -->
-        <div class="pointer-events-none absolute left-1/2 top-0 -z-10 h-full w-px -translate-x-1/2
-                  bg-gradient-to-b from-cyan-400/40 via-indigo-400/30 to-cyan-400/40"></div>
-
-        <ol class="space-y-16">
-          <!-- Step 1 (left) -->
-          <li class="relative grid md:grid-cols-2 items-center">
-            <!-- badge -->
-            <div class="hidden md:block absolute left-1/2 -translate-x-1/2 -top-3">
-              <span class="relative inline-flex h-10 w-10 items-center justify-center">
-                <span class="absolute inset-0 rounded-full badge-pulse"></span>
-                <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-950
-             ring-2 ring-cyan-400 font-semibold text-cyan-300
-             animate-pulseWave [animation-delay:0s]">1</span>
-              </span>
+          <article
+            class="rounded-2xl border border-emerald-800/50 bg-emerald-900/20 p-6 hover:border-emerald-700/60 transition">
+            <div
+              class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20"
+              aria-hidden="true">
+              <i class="fa-solid fa-note-sticky"></i>
             </div>
-
-            <div class="md:pr-12">
-              <div class="flex md:justify-end">
-                <article
-                  class="w-full md:max-w-md rounded-xl border border-slate-800 bg-slate-900/60 p-6 backdrop-blur-sm">
-                  <div class="flex items-center gap-3">
-                    <span
-                      class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400 ring-1 ring-cyan-500/20">
-                      <i class="fa-solid fa-magnifying-glass"></i>
-                    </span>
-                    <h3 class="font-semibold" data-i18n="process1_title"></h3>
-                  </div>
-                  <p class="mt-2 text-slate-400 text-sm" data-i18n="process1_text"></p>
-                </article>
-              </div>
-            </div>
-
-            <!-- connector (curved) -->
-            <svg class="hidden md:block absolute left-1/2 top-full -translate-x-1/2 h-10 w-56 text-slate-700"
-              viewBox="0 0 224 40" fill="none" stroke="currentColor">
-              <path d="M0 2 C70 2, 70 38, 140 38" stroke-width="1.5" stroke-opacity=".7" />
-              <path d="M140 38 L132 32 M140 38 L132 44" stroke-width="1.5" stroke-opacity=".7" />
-            </svg>
-          </li>
-
-          <!-- Step 2 (right) -->
-          <li class="relative grid md:grid-cols-2 items-center">
-            <div class="hidden md:block absolute left-1/2 -translate-x-1/2 -top-3">
-              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-950
-             ring-2 ring-indigo-400 font-semibold text-indigo-300
-             animate-pulseWave [animation-delay:1s]">2</span>
-            </div>
-
-            <div class="hidden md:block"></div>
-            <div class="md:pl-12">
-              <div class="flex">
-                <article
-                  class="w-full md:max-w-md rounded-xl border border-slate-800 bg-slate-900/60 p-6 backdrop-blur-sm">
-                  <div class="flex items-center gap-3">
-                    <span
-                      class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-400 ring-1 ring-indigo-500/20">
-                      <i class="fa-solid fa-gears"></i>
-                    </span>
-                    <h3 class="font-semibold" data-i18n="process2_title"></h3>
-                  </div>
-                  <p class="mt-2 text-slate-400 text-sm" data-i18n="process2_text"></p>
-                </article>
-              </div>
-            </div>
-
-            <svg class="hidden md:block absolute left-1/2 top-full -translate-x-1/2 h-10 w-56 text-slate-700"
-              viewBox="0 0 224 40" fill="none" stroke="currentColor">
-              <path d="M224 2 C154 2, 154 38, 84 38" stroke-width="1.5" stroke-opacity=".7" />
-              <path d="M84 38 L92 32 M84 38 L92 44" stroke-width="1.5" stroke-opacity=".7" />
-            </svg>
-          </li>
-
-          <!-- Step 3 (left) -->
-          <li class="relative grid md:grid-cols-2 items-center">
-            <div class="hidden md:block absolute left-1/2 -translate-x-1/2 -top-3">
-              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-950
-             ring-2 ring-cyan-400 font-semibold text-cyan-300
-             animate-pulseWave [animation-delay:2s]">3</span>
-            </div>
-
-            <div class="md:pr-12">
-              <div class="flex md:justify-end">
-                <article
-                  class="w-full md:max-w-md rounded-xl border border-slate-800 bg-slate-900/60 p-6 backdrop-blur-sm">
-                  <div class="flex items-center gap-3">
-                    <span
-                      class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400 ring-1 ring-cyan-500/20">
-                      <i class="fa-solid fa-truck"></i>
-                    </span>
-                    <h3 class="font-semibold" data-i18n="process3_title"></h3>
-                  </div>
-                  <p class="mt-2 text-slate-400 text-sm" data-i18n="process3_text"></p>
-                </article>
-              </div>
-            </div>
-
-            <svg class="hidden md:block absolute left-1/2 top-full -translate-x-1/2 h-10 w-56 text-slate-700"
-              viewBox="0 0 224 40" fill="none" stroke="currentColor">
-              <path d="M0 2 C70 2, 70 38, 140 38" stroke-width="1.5" stroke-opacity=".7" />
-              <path d="M140 38 L132 32 M140 38 L132 44" stroke-width="1.5" stroke-opacity=".7" />
-            </svg>
-          </li>
-
-          <!-- Step 4 (right) -->
-          <li class="relative grid md:grid-cols-2 items-center">
-            <div class="hidden md:block absolute left-1/2 -translate-x-1/2 -top-3">
-              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-950
-             ring-2 ring-indigo-400 font-semibold text-indigo-300
-             animate-pulseWave [animation-delay:3s]">4</span>
-            </div>
-
-            <div class="hidden md:block"></div>
-            <div class="md:pl-12">
-              <div class="flex">
-                <article
-                  class="w-full md:max-w-md rounded-xl border border-slate-800 bg-slate-900/60 p-6 backdrop-blur-sm">
-                  <div class="flex items-center gap-3">
-                    <span
-                      class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-400 ring-1 ring-indigo-500/20">
-                      <i class="fa-solid fa-chart-line"></i>
-                    </span>
-                    <h3 class="font-semibold" data-i18n="process4_title"></h3>
-                  </div>
-                  <p class="mt-2 text-slate-400 text-sm" data-i18n="process4_text"></p>
-                </article>
-              </div>
-            </div>
-          </li>
-        </ol>
-
-        <!-- mobile: simple stacked line -->
-        <div class="md:hidden mt-10 h-px w-full bg-slate-800/60"></div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Final CTA / Free Consultation -->
-  <section class="relative py-20">
-    <div
-      class="absolute inset-0 -z-10 opacity-30 blur-2xl
-              bg-[radial-gradient(600px_300px_at_0%_0%,rgba(34,211,238,.35),transparent_60%),radial-gradient(800px_400px_at_100%_10%,rgba(79,70,229,.35),transparent_60%)]">
-    </div>
-
-    <div class="max-w-screen-xl mx-auto px-6">
-      <div class="grid lg:grid-cols-2 gap-8 items-center">
-        <div>
-          <p class="inline-block text-xs font-semibold text-cyan-300 tracking-wide uppercase mb-2"
-            data-i18n="consult_kicker"></p>
-          <h2 class="text-3xl md:text-4xl font-extrabold leading-tight" data-i18n="consult_title"></h2>
-          <p class="mt-3 text-slate-300" data-i18n="consult_sub"></p>
-
-          <ul class="mt-6 space-y-2 text-sm text-slate-300">
-            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span
-                data-i18n="consult_b1"></span></li>
-            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span
-                data-i18n="consult_b2"></span></li>
-            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span
-                data-i18n="consult_b3"></span></li>
-          </ul>
-
-          <button data-modal-open
-            class="mt-6 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-400 px-5 py-3 font-semibold text-white hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
-            data-i18n="consult_cta"></button>
+            <h3 class="mt-4 font-semibold" data-i18n="ps4_solution">
+              AI som transkriberar möten och skapar anteckningar
+            </h3>
+            <p class="mt-1 text-slate-200" data-i18n="ps4_solution_desc">
+              AI-drivna verktyg som lyssnar på möten, genererar tydliga protokoll och markerar åtgärdspunkter.
+            </p>
+          </article>
         </div>
 
-        <!-- Decorative card -->
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur">
-          <div class="flex items-center gap-3">
+      </div>
+    </section>
+
+    <!-- Why HiT3CH -->
+    <section id="why-hit3ch" class="scroll-mt-24 md:scroll-mt-28 py-16 md:py-20">
+      <div class="max-w-screen-xl mx-auto px-6">
+        <header class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold" data-i18n="why_title">Varför HiT3CH</h2>
+          <div
+            class="mx-auto mt-3 h-[3px] w-40 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-400 to-cyan-400 bg-[length:200%_3px] animate-shimmerX motion-reduce:animate-none">
+          </div>
+          <p class="mt-4 text-slate-400" data-i18n="why_intro">Svensk partner som designar AI-lösningar för företag —
+            från AI-kundtjänst till arbetsflödesautomation.</p>
+        </header>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <article
+            class="group relative rounded-xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur hover:border-slate-700/80 hover:bg-slate-900/70 transition">
+            <div
+              class="pointer-events-none absolute inset-0 -z-10 rounded-xl before:content-[''] before:absolute before:inset-0 before:rounded-xl before:bg-[linear-gradient(110deg,rgba(34,211,238,.35),rgba(99,102,241,.35),rgba(34,211,238,.35))] before:bg-[length:200%_200%] before:opacity-0 group-hover:before:opacity-100 before:animate-shimmerX transition-opacity motion-reduce:animate-none">
+            </div>
             <span
-              class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400 ring-1 ring-cyan-500/20">
-              <i class="fa-solid fa-headset"></i>
+              class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400 ring-1 ring-cyan-500/20 animate-floatY motion-reduce:animate-none">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
             </span>
-            <h3 class="font-semibold" data-i18n="consult_side_title"></h3>
-          </div>
-          <p class="mt-2 text-slate-400 text-sm" data-i18n="consult_side_sub"></p>
-          <div class="mt-4 grid grid-cols-2 gap-3 text-xs">
-            <div class="rounded-lg border border-slate-800/70 bg-slate-900/40 p-3">
-              <div class="text-slate-200 font-semibold" data-i18n="consult_stat1_v"></div>
-              <div class="text-slate-400" data-i18n="consult_stat1_l"></div>
+            <h3 class="mt-3 font-semibold" data-i18n="why_point1_title"></h3>
+            <p class="text-slate-400 text-sm" data-i18n="why_point1_text"></p>
+          </article>
+
+          <article
+            class="group relative rounded-xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur hover:border-slate-700/80 hover:bg-slate-900/70 transition">
+            <div
+              class="pointer-events-none absolute inset-0 -z-10 rounded-xl before:content-[''] before:absolute before:inset-0 before:rounded-xl before:bg-[linear-gradient(110deg,rgba(34,211,238,.35),rgba(99,102,241,.35),rgba(34,211,238,.35))] before:bg-[length:200%_200%] before:opacity-0 group-hover:before:opacity-100 before:animate-shimmerX transition-opacity motion-reduce:animate-none">
             </div>
-            <div class="rounded-lg border border-slate-800/70 bg-slate-900/40 p-3">
-              <div class="text-slate-200 font-semibold" data-i18n="consult_stat2_v"></div>
-              <div class="text-slate-400" data-i18n="consult_stat2_l"></div>
+            <span
+              class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-400 ring-1 ring-indigo-500/20 animate-floatY motion-reduce:animate-none [animation-delay:.2s]">
+              <i class="fa-solid fa-handshake"></i>
+            </span>
+            <h3 class="mt-3 font-semibold" data-i18n="why_point2_title"></h3>
+            <p class="text-slate-400 text-sm" data-i18n="why_point2_text"></p>
+          </article>
+
+          <article
+            class="group relative rounded-xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur hover:border-slate-700/80 hover:bg-slate-900/70 transition">
+            <div
+              class="pointer-events-none absolute inset-0 -z-10 rounded-xl before:content-[''] before:absolute before:inset-0 before:rounded-xl before:bg-[linear-gradient(110deg,rgba(34,211,238,.35),rgba(99,102,241,.35),rgba(34,211,238,.35))] before:bg-[length:200%_200%] before:opacity-0 group-hover:before:opacity-100 before:animate-shimmerX transition-opacity motion-reduce:animate-none">
             </div>
+            <span
+              class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20 animate-floatY motion-reduce:animate-none [animation-delay:.4s]">
+              <i class="fa-solid fa-shield-halved"></i>
+            </span>
+            <h3 class="mt-3 font-semibold" data-i18n="why_point3_title"></h3>
+            <p class="text-slate-400 text-sm" data-i18n="why_point3_text"></p>
+          </article>
+
+          <article
+            class="group relative rounded-xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur hover:border-slate-700/80 hover:bg-slate-900/70 transition">
+            <div
+              class="pointer-events-none absolute inset-0 -z-10 rounded-xl before:content-[''] before:absolute before:inset-0 before:rounded-xl before:bg-[linear-gradient(110deg,rgba(34,211,238,.35),rgba(99,102,241,.35),rgba(34,211,238,.35))] before:bg-[length:200%_200%] before:opacity-0 group-hover:before:opacity-100 before:animate-shimmerX transition-opacity motion-reduce:animate-none">
+            </div>
+            <span
+              class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-500/10 text-sky-400 ring-1 ring-sky-500/20 animate-floatY motion-reduce:animate-none [animation-delay:.6s]">
+              <i class="fa-solid fa-globe"></i>
+            </span>
+            <h3 class="mt-3 font-semibold" data-i18n="why_point4_title"></h3>
+            <p class="text-slate-400 text-sm" data-i18n="why_point4_text"></p>
+          </article>
+        </div>
+
+        <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div
+            class="rounded-xl border border-slate-800/70 bg-slate-900/40 p-4 text-center animate-pulseRing motion-reduce:animate-none">
+            <div class="text-2xl font-bold text-slate-100" data-i18n="why_stat1_value"></div>
+            <div class="text-sm text-slate-400" data-i18n="why_stat1_label"></div>
           </div>
-          <p class="mt-4 text-[11px] text-slate-500" data-i18n="consult_note"></p>
+          <div
+            class="rounded-xl border border-slate-800/70 bg-slate-900/40 p-4 text-center animate-pulseRing motion-reduce:animate-none [animation-delay:.3s]">
+            <div class="text-2xl font-bold text-slate-100" data-i18n="why_stat2_value"></div>
+            <div class="text-sm text-slate-400" data-i18n="why_stat2_label"></div>
+          </div>
+          <div
+            class="rounded-xl border border-slate-800/70 bg-slate-900/40 p-4 text-center animate-pulseRing motion-reduce:animate-none [animation-delay:.6s]">
+            <div class="text-2xl font-bold text-slate-100" data-i18n="why_stat3_value"></div>
+            <div class="text-sm text-slate-400" data-i18n="why_stat3_label"></div>
+          </div>
+          <div
+            class="rounded-xl border border-slate-800/70 bg-slate-900/40 p-4 text-center animate-pulseRing motion-reduce:animate-none [animation-delay:.9s]">
+            <div class="text-2xl font-bold text-slate-100" data-i18n="why_stat4_value"></div>
+            <div class="text-sm text-slate-400" data-i18n="why_stat4_label"></div>
+          </div>
+        </div>
+
+        <p class="mt-4 text-center text-xs text-slate-500" data-i18n="why_note"></p>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="scroll-mt-24 md:scroll-mt-28 py-20 md:py-20">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold" data-i18n="process_title"></h2>
+          <p class="mt-2 text-slate-400" data-i18n="process_sub"></p>
+        </div>
+        <div
+          class="mx-auto mt-3 h-[3px] w-40 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-400 to-cyan-400 bg-[length:200%_3px] animate-shimmerX motion-reduce:animate-none">
+        </div>
+
+        <div class="relative mt-12">
+          <div
+            class="pointer-events-none absolute left-1/2 top-0 -z-10 h-full w-px -translate-x-1/2 bg-gradient-to-b from-cyan-400/40 via-indigo-400/30 to-cyan-400/40">
+          </div>
+
+          <ol class="space-y-16">
+            <!-- Step 1 -->
+            <li class="relative grid md:grid-cols-2 items-center">
+              <div class="hidden md:block absolute left-1/2 -translate-x-1/2 -top-3">
+                <span class="relative inline-flex h-10 w-10 items-center justify-center">
+                  <span class="absolute inset-0 rounded-full badge-pulse"></span>
+                  <span
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-950 ring-2 ring-cyan-400 font-semibold text-cyan-300 animate-pulseWave motion-reduce:animate-none [animation-delay:0s]">1</span>
+                </span>
+              </div>
+
+              <div class="md:pr-12">
+                <div class="flex md:justify-end">
+                  <article
+                    class="w-full md:max-w-md rounded-xl border border-slate-800 bg-slate-900/60 p-6 backdrop-blur-sm hover:border-slate-700/80 transition">
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400 ring-1 ring-cyan-500/20">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                      </span>
+                      <h3 class="font-semibold" data-i18n="process1_title"></h3>
+                    </div>
+                    <p class="mt-2 text-slate-400 text-sm" data-i18n="process1_text"></p>
+                  </article>
+                </div>
+              </div>
+
+              <svg class="hidden md:block absolute left-1/2 top-full -translate-x-1/2 h-10 w-56 text-slate-700"
+                viewBox="0 0 224 40" fill="none" stroke="currentColor">
+                <path d="M0 2 C70 2, 70 38, 140 38" stroke-width="1.5" stroke-opacity=".7" />
+                <path d="M140 38 L132 32 M140 38 L132 44" stroke-width="1.5" stroke-opacity=".7" />
+              </svg>
+            </li>
+
+            <!-- Step 2 -->
+            <li class="relative grid md:grid-cols-2 items-center">
+              <div class="hidden md:block absolute left-1/2 -translate-x-1/2 -top-3">
+                <span
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-950 ring-2 ring-indigo-400 font-semibold text-indigo-300 animate-pulseWave motion-reduce:animate-none [animation-delay:1s]">2</span>
+              </div>
+
+              <div class="hidden md:block"></div>
+              <div class="md:pl-12">
+                <div class="flex">
+                  <article
+                    class="w-full md:max-w-md rounded-xl border border-slate-800 bg-slate-900/60 p-6 backdrop-blur-sm hover:border-slate-700/80 transition">
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-400 ring-1 ring-indigo-500/20">
+                        <i class="fa-solid fa-gears"></i>
+                      </span>
+                      <h3 class="font-semibold" data-i18n="process2_title"></h3>
+                    </div>
+                    <p class="mt-2 text-slate-400 text-sm" data-i18n="process2_text"></p>
+                  </article>
+                </div>
+              </div>
+
+              <svg class="hidden md:block absolute left-1/2 top-full -translate-x-1/2 h-10 w-56 text-slate-700"
+                viewBox="0 0 224 40" fill="none" stroke="currentColor">
+                <path d="M224 2 C154 2, 154 38, 84 38" stroke-width="1.5" stroke-opacity=".7" />
+                <path d="M84 38 L92 32 M84 38 L92 44" stroke-width="1.5" stroke-opacity=".7" />
+              </svg>
+            </li>
+
+            <!-- Step 3 -->
+            <li class="relative grid md:grid-cols-2 items-center">
+              <div class="hidden md:block absolute left-1/2 -translate-x-1/2 -top-3">
+                <span
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-950 ring-2 ring-cyan-400 font-semibold text-cyan-300 animate-pulseWave motion-reduce:animate-none [animation-delay:2s]">3</span>
+              </div>
+
+              <div class="md:pr-12">
+                <div class="flex md:justify-end">
+                  <article
+                    class="w-full md:max-w-md rounded-xl border border-slate-800 bg-slate-900/60 p-6 backdrop-blur-sm hover:border-slate-700/80 transition">
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400 ring-1 ring-cyan-500/20">
+                        <i class="fa-solid fa-truck"></i>
+                      </span>
+                      <h3 class="font-semibold" data-i18n="process3_title"></h3>
+                    </div>
+                    <p class="mt-2 text-slate-400 text-sm" data-i18n="process3_text"></p>
+                  </article>
+                </div>
+              </div>
+
+              <svg class="hidden md:block absolute left-1/2 top-full -translate-x-1/2 h-10 w-56 text-slate-700"
+                viewBox="0 0 224 40" fill="none" stroke="currentColor">
+                <path d="M0 2 C70 2, 70 38, 140 38" stroke-width="1.5" stroke-opacity=".7" />
+                <path d="M140 38 L132 32 M140 38 L132 44" stroke-width="1.5" stroke-opacity=".7" />
+              </svg>
+            </li>
+
+            <!-- Step 4 -->
+            <li class="relative grid md:grid-cols-2 items-center">
+              <div class="hidden md:block absolute left-1/2 -translate-x-1/2 -top-3">
+                <span
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-950 ring-2 ring-indigo-400 font-semibold text-indigo-300 animate-pulseWave motion-reduce:animate-none [animation-delay:3s]">4</span>
+              </div>
+
+              <div class="hidden md:block"></div>
+              <div class="md:pl-12">
+                <div class="flex">
+                  <article
+                    class="w-full md:max-w-md rounded-xl border border-slate-800 bg-slate-900/60 p-6 backdrop-blur-sm hover:border-slate-700/80 transition">
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-400 ring-1 ring-indigo-500/20">
+                        <i class="fa-solid fa-chart-line"></i>
+                      </span>
+                      <h3 class="font-semibold" data-i18n="process4_title"></h3>
+                    </div>
+                    <p class="mt-2 text-slate-400 text-sm" data-i18n="process4_text"></p>
+                  </article>
+                </div>
+              </div>
+            </li>
+          </ol>
+
+          <div class="md:hidden mt-10 h-px w-full bg-slate-800/60"></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="scroll-mt-24 md:scroll-mt-28 py-16 md:py-20">
+      <div class="max-w-screen-xl mx-auto px-6">
+        <header class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold" data-i18n="faq_title">Vanliga frågor</h2>
+          <div
+            class="mx-auto mt-3 h-[3px] w-40 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-400 to-cyan-400 bg-[length:200%_3px] animate-shimmerX motion-reduce:animate-none">
+          </div>
+          <p class="mt-4 text-slate-400" data-i18n="faq_sub">Snabba svar om AI-automation, AI-kundsupport och
+            chattbotar.</p>
+        </header>
+
+        <div class="mt-10 grid gap-4 md:gap-5">
+          <!-- Q0 -->
+          <details
+            class="group rounded-xl border border-slate-800 bg-slate-900/50 p-5 backdrop-blur transition hover:border-slate-700/80">
+            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-3">
+              <span class="font-semibold text-slate-100 group-open:text-cyan-300" data-i18n="faq_q0">
+                Vad är HiT3CH?
+              </span>
+              <span
+                class="shrink-0 h-6 w-6 grid place-items-center rounded-md border border-slate-700 text-slate-400 group-open:text-cyan-300">
+                <i class="fa-solid fa-plus group-open:hidden"></i>
+                <i class="fa-solid fa-minus hidden group-open:block"></i>
+              </span>
+            </summary>
+            <p class="mt-3 text-sm text-slate-300" data-i18n="faq_a0">
+              HiT3CH är en svensk leverantör av AI-automation för företag. Vi erbjuder AI-kundsupport, AI-chattbotar,
+              arbetsflödesautomation och AI-verktyg för marknadsföring. Som AI-konsult inom automatisering hjälper vi
+              både små och medelstora företag att effektivisera kundservice och processer.
+            </p>
+          </details>
+          <!-- Q1 -->
+          <details
+            class="group rounded-xl border border-slate-800 bg-slate-900/50 p-5 backdrop-blur transition hover:border-slate-700/80">
+            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-3">
+              <span class="font-semibold text-slate-100 group-open:text-cyan-300" data-i18n="faq_q1">
+                Vad är AI-automation och hur kommer vi igång?
+              </span>
+              <span
+                class="shrink-0 h-6 w-6 grid place-items-center rounded-md border border-slate-700 text-slate-400 group-open:text-cyan-300">
+                <i class="fa-solid fa-plus group-open:hidden"></i>
+                <i class="fa-solid fa-minus hidden group-open:block"></i>
+              </span>
+            </summary>
+            <p class="mt-3 text-sm text-slate-300" data-i18n="faq_a1">
+              AI-automation använder modeller och regler för att automatisera återkommande uppgifter i kundtjänst,
+              marknadsföring och interna flöden. Vi börjar med ett 30-minuters samtal, ringar in målen och föreslår en
+              pilot.
+            </p>
+          </details>
+
+          <!-- Q2 -->
+          <details
+            class="group rounded-xl border border-slate-800 bg-slate-900/50 p-5 backdrop-blur transition hover:border-slate-700/80">
+            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-3">
+              <span class="font-semibold text-slate-100 group-open:text-cyan-300" data-i18n="faq_q2">
+                Fungerar AI-kundtjänst tillsammans med vårt CRM/telefoni?
+              </span>
+              <span
+                class="shrink-0 h-6 w-6 grid place-items-center rounded-md border border-slate-700 text-slate-400 group-open:text-cyan-300">
+                <i class="fa-solid fa-plus group-open:hidden"></i>
+                <i class="fa-solid fa-minus hidden group-open:block"></i>
+              </span>
+            </summary>
+            <p class="mt-3 text-sm text-slate-300" data-i18n="faq_a2">
+              Ja, vi integrerar med vanliga system (t.ex. CRM, helpdesk och telefoni). Vi levererar AI-kundtjänst
+              programvara som kopplas säkert till era verktyg.
+            </p>
+          </details>
+
+          <!-- Q3 -->
+          <details
+            class="group rounded-xl border border-slate-800 bg-slate-900/50 p-5 backdrop-blur transition hover:border-slate-700/80">
+            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-3">
+              <span class="font-semibold text-slate-100 group-open:text-cyan-300" data-i18n="faq_q3">
+                Hur tränas en AI-chattbot på vårt innehåll?
+              </span>
+              <span
+                class="shrink-0 h-6 w-6 grid place-items-center rounded-md border border-slate-700 text-slate-400 group-open:text-cyan-300">
+                <i class="fa-solid fa-plus group-open:hidden"></i>
+                <i class="fa-solid fa-minus hidden group-open:block"></i>
+              </span>
+            </summary>
+            <p class="mt-3 text-sm text-slate-300" data-i18n="faq_a3">
+              Vi kopplar boten till er kunskapsbas/FAQ och styr svar med policies och testfall. Ni godkänner innan skarp
+              drift.
+            </p>
+          </details>
+
+          <!-- Q4 -->
+          <details
+            class="group rounded-xl border border-slate-800 bg-slate-900/50 p-5 backdrop-blur transition hover:border-slate-700/80">
+            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-3">
+              <span class="font-semibold text-slate-100 group-open:text-cyan-300" data-i18n="faq_q4">
+                Hur mäter vi effekt av AI-lösningar för företag?
+              </span>
+              <span
+                class="shrink-0 h-6 w-6 grid place-items-center rounded-md border border-slate-700 text-slate-400 group-open:text-cyan-300">
+                <i class="fa-solid fa-plus group-open:hidden"></i>
+                <i class="fa-solid fa-minus hidden group-open:block"></i>
+              </span>
+            </summary>
+            <p class="mt-3 text-sm text-slate-300" data-i18n="faq_a4">
+              Vi följer KPI:er som svarstid, lösningsgrad, CSAT och kostnad per ärende. Ni får regelbundna rapporter och
+              förbättringsförslag.
+            </p>
+          </details>
+
+          <!-- Q5 (new) -->
+          <details
+            class="group rounded-xl border border-slate-800 bg-slate-900/50 p-5 backdrop-blur transition hover:border-slate-700/80">
+            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-3">
+              <span class="font-semibold text-slate-100 group-open:text-cyan-300" data-i18n="faq_q5">
+                Vad kostar en AI-chattbot för kundservice?
+              </span>
+              <span
+                class="shrink-0 h-6 w-6 grid place-items-center rounded-md border border-slate-700 text-slate-400 group-open:text-cyan-300">
+                <i class="fa-solid fa-plus group-open:hidden"></i>
+                <i class="fa-solid fa-minus hidden group-open:block"></i>
+              </span>
+            </summary>
+            <p class="mt-3 text-sm text-slate-300" data-i18n="faq_a5">
+              Priset på AI-chattbot för kundservice varierar beroende på volym, språk och integrationer. Vanligt är en
+              startkostnad för implementation och en månadskostnad baserad på användning. Kontakta oss för en offert på
+              AI-chattbot pris.
+            </p>
+          </details>
+
+          <!-- Q6 -->
+          <details
+            class="group rounded-xl border border-slate-800 bg-slate-900/50 p-5 backdrop-blur transition hover:border-slate-700/80">
+            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-3">
+              <span class="font-semibold text-slate-100 group-open:text-cyan-300" data-i18n="faq_q6">
+                Kan vi börja litet och växa över tid?
+              </span>
+              <span
+                class="shrink-0 h-6 w-6 grid place-items-center rounded-md border border-slate-700 text-slate-400 group-open:text-cyan-300">
+                <i class="fa-solid fa-plus group-open:hidden"></i>
+                <i class="fa-solid fa-minus hidden group-open:block"></i>
+              </span>
+            </summary>
+            <p class="mt-3 text-sm text-slate-300" data-i18n="faq_a6">
+              Absolut. Vi startar med en avgränsad pilot (t.ex. FAQ i chatten) och skalar med fler use-case när ni ser
+              värde.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+
+    <script>
+      // tiny accordion JS (no changes needed elsewhere)
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('section#faq article button');
+        if (!btn) return;
+        const panel = btn.parentElement.querySelector('div');
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        panel.classList.toggle('hidden', open);
+      });
+    </script>
+
+
+    <!-- Final CTA / Free Consultation -->
+    <section id="contact" class="scroll-mt-24 md:scroll-mt-28 relative py-20 md:py-24">
+      <div
+        class="absolute inset-0 -z-10 opacity-30 blur-2xl bg-[radial-gradient(600px_300px_at_0%_0%,rgba(34,211,238,.35),transparent_60%),radial-gradient(800px_400px_at_100%_10%,rgba(79,70,229,.35),transparent_60%)]">
+      </div>
+
+      <div class="max-w-screen-xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <p class="inline-block text-xs font-semibold text-cyan-300 tracking-wide uppercase mb-2"
+              data-i18n="consult_kicker">Gratis rådgivning</p>
+            <h2 class="text-3xl md:text-4xl font-extrabold leading-tight" data-i18n="consult_title">Få en gratis
+              konsultation nu</h2>
+            <p class="mt-3 text-slate-300" data-i18n="consult_sub">Ett fokuserat 30-minuters möte där vi identifierar
+              flaskhalsar och visar hur automation kan skapa mätbara förbättringar i er verksamhet.</p>
+
+            <ul class="mt-6 space-y-2 text-sm text-slate-300">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"
+                  aria-hidden="true"></i> <span data-i18n="consult_b1">Identifiera nyckelutmaningar – vi kartlägger
+                  era
+                  flaskhalsar.</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"
+                  aria-hidden="true"></i> <span data-i18n="consult_b2">Få skräddarsydda förslag – konkreta idéer
+                  utifrån
+                  era mål.</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"
+                  aria-hidden="true"></i> <span data-i18n="consult_b3">Besluta i er takt – tydliga nästa steg utan
+                  förpliktelser.</span></li>
+            </ul>
+
+            <button data-modal-open class="mt-6 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-400 px-5 py-3 font-semibold text-white
+                     hover:scale-105 active:shadow-[0_0_12px_rgba(34,211,238,0.8)]
+                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 transition-transform"
+              data-i18n="consult_cta">Boka gratis konsultation</button>
+          </div>
+          <!-- Decorative card -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur">
+            <div class="flex items-center gap-3">
+              <span
+                class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400 ring-1 ring-cyan-500/20">
+                <i class="fa-solid fa-headset"></i>
+              </span>
+              <h3 class="font-semibold" data-i18n="consult_side_title"></h3>
+            </div>
+            <p class="mt-2 text-slate-400 text-sm" data-i18n="consult_side_sub"></p>
+            <div class="mt-4 grid grid-cols-2 gap-3 text-xs">
+              <div class="rounded-lg border border-slate-800/70 bg-slate-900/40 p-3">
+                <div class="text-slate-200 font-semibold" data-i18n="consult_stat1_v"></div>
+                <div class="text-slate-400" data-i18n="consult_stat1_l"></div>
+              </div>
+              <div class="rounded-lg border border-slate-800/70 bg-slate-900/40 p-3">
+                <div class="text-slate-200 font-semibold" data-i18n="consult_stat2_v"></div>
+                <div class="text-slate-400" data-i18n="consult_stat2_l"></div>
+              </div>
+            </div>
+            <p class="mt-4 text-[11px] text-slate-500" data-i18n="consult_note"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
 
   <!-- Footer -->
   <footer class="relative bg-slate-900 border-t border-slate-800/60">
     <div class="absolute inset-0 -z-10 bg-gradient-to-r from-sky-900/30 via-indigo-900/20 to-sky-900/30"></div>
 
     <div class="max-w-screen-xl mx-auto px-6 py-12 grid gap-8 md:grid-cols-3 items-start">
-      <!-- Brand -->
       <div>
         <a href="#top" class="flex items-center gap-2 text-slate-100 font-bold text-lg">
-          <img src="/assets/img/logo.png" alt="HiT3CH" class="w-10 h-10"> HiT3CH
+          <img src="/assets/img/logo.png" alt="HiT3CH logotyp" class="w-8 h-8 sm:w-[50px] sm:h-[50px]" width="50"
+            height="50">
+          HiT3CH
         </a>
-        <p class="mt-3 text-sm text-slate-400" data-i18n="hero_pill"></p>
+        <p class="mt-3 text-sm text-slate-400" data-i18n="hero_pill">Lås upp effektiviteten med AI</p>
       </div>
 
-      <!-- Contact Info -->
       <div>
-        <h4 class="font-semibold text-slate-200 mb-3" data-i18n="footer_contact"></h4>
+        <h4 class="font-semibold text-slate-200 mb-3" data-i18n="footer_contact">Kontakt</h4>
         <ul class="space-y-2 text-sm text-slate-400">
-          <li><i class="fa-solid fa-phone text-cyan-400 mr-2"></i> +46 700 544 639</li>
-          <li><i class="fa-solid fa-envelope text-cyan-400 mr-2"></i> alaa.hijazi@hit3ch.com</li>
-          <li><i class="fa-solid fa-location-dot text-cyan-400 mr-2"></i> Göteborg, Sweden</li>
+          <li><i class="fa-solid fa-phone text-cyan-400 mr-2" aria-hidden="true"></i> <a href="tel:+46700544639"
+              class="hover:underline">+46 700 544 639</a></li>
+          <li><i class="fa-solid fa-envelope text-cyan-400 mr-2" aria-hidden="true"></i> <a
+              href="mailto:info@hit3ch.com" class="hover:underline">Info@hit3ch.com</a></li>
+          <li><i class="fa-solid fa-location-dot text-cyan-400 mr-2" aria-hidden="true"></i> Göteborg, Sweden</li>
         </ul>
+        <p class="mt-4 text-sm">
+          <button id="privacy-open"
+            class="text-slate-400 hover:text-cyan-400 underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
+            <span data-i18n="footer_privacy">Integritetspolicy</span>
+          </button>
+        </p>
       </div>
 
-      <!-- Rights -->
       <div class="flex items-start md:items-end justify-end">
-        <small class="text-slate-500">&copy; <span id="year"></span> HiT3CH — <span
-            data-i18n="footer_rights"></span></small>
+        <small class="text-slate-500">&copy; <span id="year"></span> HiT3CH — <span data-i18n="footer_rights">Alla
+            rättigheter förbehållna.</span></small>
       </div>
     </div>
   </footer>
 
   <!-- Contact Modal -->
-  <div id="contact-modal" class="hidden fixed inset-0 bg-black/60 items-center justify-center" aria-hidden="true">
+  <div id="contact-modal" class="hidden fixed inset-0 bg-black/60 items-center justify-center" aria-hidden="true"
+    role="dialog" aria-modal="true" aria-labelledby="consult-modal-title">
     <div id="modal-bg" class="flex items-center justify-center w-full h-full p-4">
-      <div class="relative w-full max-w-lg">
-        <!-- Glow border -->
+      <div id="modal-card" class="relative w-full max-w-lg transition transform">
         <div
           class="absolute -inset-0.5 rounded-2xl bg-[linear-gradient(110deg,rgba(34,211,238,.3),rgba(99,102,241,.3),rgba(34,211,238,.3))] blur opacity-60">
         </div>
@@ -563,10 +876,12 @@
         <div class="relative rounded-2xl border border-slate-800 bg-slate-900/80 backdrop-blur p-6 md:p-8 shadow-xl">
           <div class="flex justify-between items-start gap-4">
             <div>
-              <h3 class="text-xl font-semibold" data-i18n="consult_modal_title"></h3>
-              <p class="text-slate-400 text-sm" data-i18n="consult_modal_sub"></p>
+              <h3 id="consult-modal-title" class="text-xl font-semibold" data-i18n="consult_modal_title">Boka gratis
+                konsultation</h3>
+              <p class="text-slate-400 text-sm" data-i18n="consult_modal_sub">Fyll i formuläret så hör vi av oss för att
+                boka en tid.</p>
             </div>
-            <button id="modal-close" class="text-slate-400 hover:text-slate-100" aria-label="Close">✕</button>
+            <button id="modal-close" class="text-slate-400 hover:text-slate-100" aria-label="Stäng">✕</button>
           </div>
 
           <form id="contact-form" class="mt-5 space-y-4" novalidate>
@@ -575,65 +890,124 @@
 
             <div class="grid md:grid-cols-2 gap-4">
               <div>
-                <label class="block text-sm mb-1" for="name" data-i18n="form_name"></label>
-                <input id="name" name="name" type="text" required
+                <label class="block text-sm mb-1" for="name" data-i18n="form_name">Namn</label>
+                <input id="name" name="name" type="text" required autocomplete="name"
                   class="w-full rounded-md border border-slate-700 bg-slate-800 px-4 py-2 outline-none focus:border-cyan-400" />
-                <p id="err-name" class="mt-1 text-xs text-red-400 hidden"></p>
+                <p id="err-name" class="mt-1 text-xs text-red-400 hidden" role="alert"></p>
               </div>
               <div>
-                <label class="block text-sm mb-1" for="company" data-i18n="form_company"></label>
-                <input id="company" name="company" type="text" required
+                <label class="block text-sm mb-1" for="company" data-i18n="form_company">Företag</label>
+                <input id="company" name="company" type="text" required autocomplete="organization"
                   class="w-full rounded-md border border-slate-700 bg-slate-800 px-4 py-2 outline-none focus:border-cyan-400" />
-                <p id="err-company" class="mt-1 text-xs text-red-400 hidden"></p>
+                <p id="err-company" class="mt-1 text-xs text-red-400 hidden" role="alert"></p>
               </div>
             </div>
 
             <div>
-              <label class="block text-sm mb-1" for="email" data-i18n="form_email"></label>
-              <input id="email" name="email" type="email" required
+              <label class="block text-sm mb-1" for="email" data-i18n="form_email">E-post</label>
+              <input id="email" name="email" type="email" required autocomplete="email" inputmode="email"
                 class="w-full rounded-md border border-slate-700 bg-slate-800 px-4 py-2 outline-none focus:border-cyan-400" />
-              <p id="err-email" class="mt-1 text-xs text-red-400 hidden"></p>
+              <p id="err-email" class="mt-1 text-xs text-red-400 hidden" role="alert"></p>
             </div>
 
             <div>
-              <label class="block text-sm mb-1" for="message" data-i18n="form_message"></label>
-              <textarea id="message" name="message" rows="4"
+              <label class="block text-sm mb-1" for="message" data-i18n="form_message">Berätta kort vad du vill
+                lösa</label>
+              <textarea id="message" name="message" rows="4" autocomplete="off"
                 class="w-full rounded-md border border-slate-700 bg-slate-800 px-4 py-2 outline-none focus:border-cyan-400"></textarea>
-              <p id="err-message" class="mt-1 text-xs text-red-400 hidden"></p>
+              <p id="err-message" class="mt-1 text-xs text-red-400 hidden" role="alert"></p>
             </div>
 
             <div class="flex items-center justify-between gap-3">
-              <p class="text-[11px] text-slate-500" data-i18n="consult_privacy"></p>
+              <p class="text-[11px] text-slate-500" data-i18n="consult_privacy">Dina uppgifter behandlas konfidentiellt
+                och används endast för att svara på din förfrågan.</p>
               <button id="form-submit" type="submit"
-                class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-400 px-5 py-2.5 font-semibold text-white hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
-                data-i18n="form_submit"></button>
+                class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-400 px-5 py-2.5 font-semibold text-white
+                       hover:scale-105 active:shadow-[0_0_12px_rgba(34,211,238,0.8)]
+                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 transition-transform"
+                data-i18n="form_submit">Skicka</button>
             </div>
 
-            <div id="form-error"
+            <div id="form-error" role="alert" aria-live="assertive"
               class="hidden mt-3 rounded-md border border-red-500/30 bg-red-500/10 px-3 py-2 text-red-300 text-sm">
             </div>
           </form>
 
-          <div id="form-success" class="hidden mt-4 text-center text-emerald-300 font-medium" data-i18n="form_success">
+          <div id="form-success" role="status" aria-live="polite"
+            class="hidden mt-4 text-center text-emerald-300 font-medium" data-i18n="form_success">
+            Tack! Vi hör av oss snart.
           </div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Privacy Modal -->
+  <div id="privacy-modal" class="hidden fixed inset-0 bg-black/60 items-center justify-center z-[70]" aria-hidden="true"
+    role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
+    <div class="flex items-center justify-center w-full h-full p-4">
+      <div
+        class="relative w-full max-w-2xl rounded-2xl border border-slate-800 bg-slate-900/90 backdrop-blur p-6 md:p-8 shadow-xl">
+        <div class="flex justify-between items-start gap-4 mb-4">
+          <h3 id="privacy-modal-title" class="text-xl font-semibold" data-i18n="privacy_title">Integritetspolicy</h3>
+          <button id="privacy-close" class="text-slate-400 hover:text-slate-100" aria-label="Stäng">✕</button>
+        </div>
+
+        <div class="text-sm text-slate-300 space-y-4 max-h-[70vh] overflow-y-auto">
+          <p data-i18n="privacy_intro_sv">HiT3CH behandlar endast de personuppgifter som du själv lämnar via vårt
+            kontaktformulär eller e-post. Uppgifterna används enbart för att besvara din förfrågan och sparas i högst 12
+            månader.</p>
+          <p data-i18n="privacy_rights_sv">Du har rätt att begära utdrag, rättelse eller radering av dina uppgifter.
+            Kontakta oss via <a href="mailto:support@hit3ch.com" class="underline">support@hit3ch.com</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- Scripts -->
-  <script type="module" src="assets/app.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script type="module" src="assets/app.js" defer></script>
+  <noscript><a href="?lang=sv">Svenska</a> | <a href="?lang=en">English</a></noscript>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
   <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "HiT3CH",
-    "url": "https://example.com",
-    "logo": "assets/img/logo.png"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://hit3ch.se/",
+        "name": "HiT3CH",
+        "url": "https://hit3ch.se/",
+        "logo": "https://hit3ch.se/assets/img/logo.png",
+        "email": "mailto:info@hit3ch.com",
+        "telephone": "+46 700 544 639",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Göteborg",
+          "addressCountry": "SE"
+        },
+
+        "sameAs": [
+          "https://www.linkedin.com/company/hit3ch",
+          "https://x.com/HiT3CH_SE"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://hit3ch.se/#website",
+        "url": "https://hit3ch.se/",
+        "name": "HiT3CH",
+        "inLanguage": "sv",
+        "publisher": { "@id": "https://hit3ch.se/" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://hit3ch.se/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
   }
   </script>
 </body>
