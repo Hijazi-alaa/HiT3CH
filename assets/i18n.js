@@ -37,6 +37,11 @@ export const translations = {
     ps3_solution: "Workflow-automation i era system",
     ps3_solution_desc: "Automatiska flöden med hjälp av AI som skapar ärenden, skickar och uppdaterar systemen åt dig.",
 
+    // Row 4
+    ps4_problem: "Möten tar tid — anteckningar missas och uppföljning försvinner.",
+    ps4_solution: "AI som transkriberar möten och skapar anteckningar",
+    ps4_solution_desc: "AI-drivna verktyg som lyssnar på möten, genererar tydliga protokoll och markerar åtgärdspunkter.",
+
     // Why HiT3CH
     why_kicker: "Om & Varför",
     why_title: "Varför välja HiT3CH för AI-automation",
@@ -152,7 +157,7 @@ export const translations = {
     footer_privacy: "Integritetspolicy",
     privacy_title: "Integritetspolicy",
     privacy_intro_sv: "HiT3CH behandlar endast de personuppgifter som du själv lämnar via vårt kontaktformulär eller e-post. Uppgifterna används enbart för att besvara din förfrågan och sparas i högst 12 månader.",
-    privacy_rights_sv: "Du har rätt att begära utdrag, rättelse eller radering av dina uppgifter. Kontakta oss via alaa.hijazi@hit3ch.com."
+    privacy_rights_sv: "Du har rätt att begära utdrag, rättelse eller radering av dina uppgifter. Kontakta oss via Info@hit3ch.com."
   },
 
   en: {
@@ -191,6 +196,12 @@ export const translations = {
     ps3_problem: "Paperwork and follow-ups drain time — bookings, invoices, and reminders slip through.",
     ps3_solution: "Workflow automation in your systems",
     ps3_solution_desc: "AI-powered flows that create tickets, send reminders, and update your systems for you.",
+
+    // Row 4
+    ps4_problem: "Meetings consume time — notes are missed and follow-ups slip away.",
+    ps4_solution: "AI that transcribes meetings and produces notes",
+    ps4_solution_desc: "AI-powered tools that listen to meetings, generate clear summaries, and highlight action items.",
+
 
     // Why HiT3CH
     why_title: "Why choose HiT3CH for AI automation",
@@ -307,6 +318,6 @@ export const translations = {
     footer_privacy: "Privacy Policy",
     privacy_title: "Privacy Policy",
     privacy_intro_sv: "HiT3CH only processes the personal data you provide via our contact form or email. The data is used solely to respond to your inquiry and is stored for a maximum of 12 months.",
-    privacy_rights_sv: "You have the right to request access, correction, or deletion of your data. Contact us at alaa.hijazi@hit3ch.com."
+    privacy_rights_sv: "You have the right to request access, correction, or deletion of your data. Contact us at Info@hit3ch.com."
   }
 };
